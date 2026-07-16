@@ -1,16 +1,52 @@
-## Hi there 👋
+# Alisa Tech Studio
 
-<!--
-**alisatechstudio/alisatechstudio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to the official website repository for **Alisa Tech Studio** - a professional app and software development company.
 
-Here are some ideas to get you started:
+## 🌐 Website
 
-- 🔭 I'm currently working on ...
-- 🌱 I'm currently learning ...
-- 👯 I'm looking to collaborate on ...
-- 🤔 I'm looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+This repository hosts our company website showcasing our services, portfolio, and team information.
+
+**Live Site:** https://alisatechstudio.github.io
+
+## 📋 About
+
+We specialize in:
+- 📱 Mobile App Development
+- 💻 Web Development
+- 🎨 UI/UX Design
+- ⚙️ Backend Services
+- 🔒 Security Solutions
+- 📊 Analytics & Support
+
+## 🚀 Getting Started
+
+To view the website locally:
+
+```bash
+# Clone the repository
+git clone git@github.com:alisatechstudio/alisatechstudio.github.io.git
+
+# Open index.html in your browser
+open index.html
+```
+
+## 📁 Project Structure
+
+```
+├── index.html      # Main website page
+├── README.md       # This file
+└── .git/          # Git configuration
+```
+
+## 💼 Services
+
+Visit our website to learn more about our services and view our recent projects.
+
+## 📞 Contact
+
+- 📧 Email: info@alisatechstudio.com
+- 🌐 Website: https://alisatechstudio.github.io
+
+## 📄 License
+
+© 2024 Alisa Tech Studio. All rights reserved.
