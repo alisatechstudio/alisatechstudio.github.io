@@ -532,16 +532,26 @@
         }
 
         .app-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: #f1f5f9;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             flex-shrink: 0;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--card-border);
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
         }
 
         .app-meta h3 {
@@ -1180,265 +1190,280 @@
             <!-- Filter Controls -->
             <div class="filter-tabs">
                 <button class="filter-btn active" data-filter="all">All Applications</button>
-                <button class="filter-btn" data-filter="productivity">Productivity &amp; Tools</button>
+                <button class="filter-btn" data-filter="tools">Tools &amp; Utilities</button>
                 <button class="filter-btn" data-filter="games">Games &amp; Puzzles</button>
-                <button class="filter-btn" data-filter="education">Education &amp; Lifestyle</button>
+                <button class="filter-btn" data-filter="education">Education &amp; Language</button>
+                <button class="filter-btn" data-filter="productivity">Productivity &amp; News</button>
             </div>
 
             <div class="apps-grid">
-                <!-- App 1 -->
-                <div class="app-card" data-category="productivity">
+                <!-- App 1: Alisa VPN -->
+                <div class="app-card" data-category="tools">
                     <div class="app-top">
-                        <div class="app-icon">🤖</div>
+                        <div class="app-icon">
+                            <img src="assets/icons/alisa-vpn.png" alt="Alisa VPN Icon" loading="lazy">
+                        </div>
                         <div class="app-meta">
-                            <h3>Alisa AI</h3>
-                            <span class="app-category">Productivity</span>
+                            <h3>Alisa VPN</h3>
+                            <span class="app-category">Security &amp; VPN</span>
                         </div>
                     </div>
-                    <p>Next-generation smart AI companion designed to streamline daily workflows, summarize content, and spark creative solutions.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.9 (12k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 2 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">🚗</div>
-                        <div class="app-meta">
-                            <h3>Amar Gari</h3>
-                            <span class="app-category">Automotive</span>
-                        </div>
-                    </div>
-                    <p>Comprehensive vehicle tracking, maintenance schedule logs, fuel efficiency calculator, and insurance renewal alerts.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.8 (8k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 3 -->
-                <div class="app-card" data-category="games">
-                    <div class="app-top">
-                        <div class="app-icon">🎯</div>
-                        <div class="app-meta">
-                            <h3>Arrow Scape</h3>
-                            <span class="app-category">Action Game</span>
-                        </div>
-                    </div>
-                    <p>Dynamic physics-based archery game with challenging obstacle courses, precision trajectory mechanics, and leaderboards.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.7 (15k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 4 -->
-                <div class="app-card" data-category="games">
-                    <div class="app-top">
-                        <div class="app-icon">🧩</div>
-                        <div class="app-meta">
-                            <h3>Block Crush</h3>
-                            <span class="app-category">Puzzle Game</span>
-                        </div>
-                    </div>
-                    <p>Engaging block-clearing spatial puzzle game engineered with smooth particle animations, combo streaks, and daily challenges.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.8 (24k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 5 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">🚌</div>
-                        <div class="app-meta">
-                            <h3>Bus Station Pro</h3>
-                            <span class="app-category">Travel &amp; Transit</span>
-                        </div>
-                    </div>
-                    <p>Public transit schedule tracker, real-time ticket booking assistant, and route departure notifications for everyday commuters.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.6 (5k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 6 -->
-                <div class="app-card" data-category="games">
-                    <div class="app-top">
-                        <div class="app-icon">🎨</div>
-                        <div class="app-meta">
-                            <h3>Color Sort Odyssey</h3>
-                            <span class="app-category">Logic Puzzle</span>
-                        </div>
-                    </div>
-                    <p>Relaxing color-matching puzzle crafted to relieve stress while exercising pattern recognition and logical sorting skills.</p>
+                    <p>High-speed WireGuard-powered VPN with advanced AES encryption, zero activity logging, Material 3 theming, and low-latency server hops.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (18k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.alisa_vpn" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
                     </div>
                 </div>
 
-                <!-- App 7 -->
-                <div class="app-card" data-category="education">
-                    <div class="app-top">
-                        <div class="app-icon">🖍️</div>
-                        <div class="app-meta">
-                            <h3>Creative Color Lab</h3>
-                            <span class="app-category">Creativity</span>
-                        </div>
-                    </div>
-                    <p>Vibrant coloring and digital canvas app for young artists and creative minds, featuring rich brush textures and color palettes.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.8 (10k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 8 -->
+                <!-- App 2: News All in One -->
                 <div class="app-card" data-category="productivity">
                     <div class="app-top">
-                        <div class="app-icon">🚙</div>
-                        <div class="app-meta">
-                            <h3>Drive Me</h3>
-                            <span class="app-category">Transportation</span>
+                        <div class="app-icon">
+                            <img src="assets/icons/news-all-in-one.png" alt="News All in One Icon" loading="lazy">
                         </div>
-                    </div>
-                    <p>Reliable ride-hailing and transportation logistic management tool featuring fare estimation, route optimization, and driver telemetry.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.7 (7k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 9 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">💰</div>
                         <div class="app-meta">
-                            <h3>Daily Finance Tracker</h3>
-                            <span class="app-category">Finance</span>
-                        </div>
-                    </div>
-                    <p>Smart money management platform that categorizes monthly spending, visualizes savings trends, and tracks recurring bills.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.9 (20k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 10 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">🌍</div>
-                        <div class="app-meta">
-                            <h3>GeoShare</h3>
-                            <span class="app-category">Location</span>
-                        </div>
-                    </div>
-                    <p>Private, battery-friendly real-time location sharing app for family meetups, travel groups, and outdoor safety.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.6 (6k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 11 -->
-                <div class="app-card" data-category="education">
-                    <div class="app-top">
-                        <div class="app-icon">🧮</div>
-                        <div class="app-meta">
-                            <h3>Math Quest Kids</h3>
-                            <span class="app-category">Education</span>
-                        </div>
-                    </div>
-                    <p>Gamified arithmetic and multiplication practice app that builds childhood numeracy through fun puzzles and reward badges.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.9 (14k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 12 -->
-                <div class="app-card" data-category="education">
-                    <div class="app-top">
-                        <div class="app-icon">🇩🇪</div>
-                        <div class="app-meta">
-                            <h3>Linguo German</h3>
-                            <span class="app-category">Language</span>
-                        </div>
-                    </div>
-                    <p>Accelerated German language learning program featuring native audio pronunciation, vocabulary flashcards, and grammar tips.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.8 (11k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 13 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">📰</div>
-                        <div class="app-meta">
-                            <h3>News All-in-One</h3>
+                            <h3>News All in One</h3>
                             <span class="app-category">News &amp; Media</span>
                         </div>
                     </div>
-                    <p>Clean, distraction-free news reader aggregating breaking stories across technology, science, business, and global headlines.</p>
+                    <p>Comprehensive Bangladeshi and international news portal aggregator featuring curated channels, breaking push alerts, and smooth in-app reading.</p>
                     <div class="app-footer">
-                        <span class="app-rating">★ 4.7 (9k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                        <span class="app-rating">★ 4.8 (22k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.news_all_in_one" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
                     </div>
                 </div>
 
-                <!-- App 14 -->
+                <!-- App 3: Arrow Escape -->
                 <div class="app-card" data-category="games">
                     <div class="app-top">
-                        <div class="app-icon">🎲</div>
+                        <div class="app-icon">
+                            <img src="assets/icons/arrow-escape.png" alt="Arrow Escape Icon" loading="lazy">
+                        </div>
                         <div class="app-meta">
-                            <h3>Sudoku Master</h3>
+                            <h3>Arrow Escape</h3>
+                            <span class="app-category">Maze Puzzle</span>
+                        </div>
+                    </div>
+                    <p>Challenging, physics-tuned trajectory maze game where players navigate complex arrow labyrinths with precision maneuvers.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (14k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.arrow_escape" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 4: Fruit Crush Saga -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/fruit-crush.png" alt="Fruit Crush Saga Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Fruit Crush Saga</h3>
+                            <span class="app-category">Match-3 Puzzle</span>
+                        </div>
+                    </div>
+                    <p>Delightful match-3 casual adventure packed with vibrant fruit cascades, exciting boosters, combo streaks, and hundreds of levels.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (35k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.fruit_crush_saga" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 5: Color Sort -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/color-sort.png" alt="Color Sort Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Color Sort</h3>
+                            <span class="app-category">Logic Puzzle</span>
+                        </div>
+                    </div>
+                    <p>Soothing color-sorting liquid puzzle engineered to relieve stress, exercise logical planning, and provide satisfying particle effects.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (29k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.color_sort" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 6: Lodu Boss -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/lodu.png" alt="Lodu Boss Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Lodu Boss</h3>
+                            <span class="app-category">3D Board Game</span>
+                        </div>
+                    </div>
+                    <p>Advanced 3D Ludo board game featuring realistic physics dice rolling, smart AI bots, local pass &amp; play, and online multiplayer rooms.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (40k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatecstudio.lodu_boss" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 7: Suduko Classic -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/sudoku.png" alt="Suduko Classic Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Suduko Classic</h3>
                             <span class="app-category">Brain Puzzle</span>
                         </div>
                     </div>
-                    <p>Classic 9x9 Sudoku logic puzzle with 5 difficulty levels, smart hints, auto-check notes, and clean minimalist aesthetics.</p>
+                    <p>Clean, distraction-free Sudoku number puzzle with 5 difficulty modes, auto-save, note-taking helpers, and offline daily challenges.</p>
                     <div class="app-footer">
-                        <span class="app-rating">★ 4.9 (32k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                        <span class="app-rating">★ 4.9 (26k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.sudoku" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
                     </div>
                 </div>
 
-                <!-- App 15 -->
-                <div class="app-card" data-category="productivity">
-                    <div class="app-top">
-                        <div class="app-icon">📝</div>
-                        <div class="app-meta">
-                            <h3>QuickList Shopper</h3>
-                            <span class="app-category">Productivity</span>
-                        </div>
-                    </div>
-                    <p>Fast and collaborative shopping list organizer with auto-categorization, price calculation, and real-time family sharing.</p>
-                    <div class="app-footer">
-                        <span class="app-rating">★ 4.8 (13k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- App 16 -->
+                <!-- App 8: Math Puzzles -->
                 <div class="app-card" data-category="education">
                     <div class="app-top">
-                        <div class="app-icon">📺</div>
+                        <div class="app-icon">
+                            <img src="assets/icons/math-puzzles.png" alt="Math Puzzles Icon" loading="lazy">
+                        </div>
                         <div class="app-meta">
-                            <h3>SportsPulse TV</h3>
-                            <span class="app-category">Sports</span>
+                            <h3>Math Puzzles</h3>
+                            <span class="app-category">Math &amp; Logic</span>
                         </div>
                     </div>
-                    <p>Live sports match tracker, league standings, fixture notifications, and post-game analytical highlights.</p>
+                    <p>Interactive arithmetic puzzles, numerical patterns, and brain teasers designed to sharpen mathematical acuity and mental calculation.</p>
                     <div class="app-footer">
-                        <span class="app-rating">★ 4.7 (16k reviews)</span>
-                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                        <span class="app-rating">★ 4.9 (16k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.math_puzzle" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 9: Learn German A1 & A2 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/learn-german-a1.png" alt="Learn German Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Learn German (A1 &amp; A2)</h3>
+                            <span class="app-category">Language Course</span>
+                        </div>
+                    </div>
+                    <p>Step-by-step German learning course tailored to the CEFR A1 &amp; A2 syllabus with clear grammar tips, audio recordings, and vocabulary drills.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (19k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.german_a1" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 10: Learn Italian A1 & A2 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/learn-italian-a1.png" alt="Learn Italian Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Learn Italian (A1 &amp; A2)</h3>
+                            <span class="app-category">Language Course</span>
+                        </div>
+                    </div>
+                    <p>30-Day beginner-to-intermediate Italian course with conversational practice, essential grammar rules, audio cards, and progress quizzes.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (12k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.italian_a1" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 11: Sports TV (SportZone) -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/sports-tv.png" alt="Sports TV Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Sports TV Live</h3>
+                            <span class="app-category">Live Sports</span>
+                        </div>
+                    </div>
+                    <p>Real-time sports fixture tracker providing international match schedules, tournament tables, score alerts, and live event telemetry.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (31k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.live_sports_tv" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 12: Personal Finance Tracker -->
+                <div class="app-card" data-category="tools">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/personal-finance.png" alt="Personal Finance Tracker Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Personal Finance</h3>
+                            <span class="app-category">Finance &amp; Budget</span>
+                        </div>
+                    </div>
+                    <p>Smart personal expense manager with visual budget breakdown charts, recurring billing reminders, and exportable financial summaries.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (24k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.personal_finance_tracker" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 13: QR & Barcode Scanner -->
+                <div class="app-card" data-category="tools">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/qr-scanner.png" alt="QR Scanner Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>QR &amp; Barcode Scanner</h3>
+                            <span class="app-category">Utility Tool</span>
+                        </div>
+                    </div>
+                    <p>Instant-detection QR code and barcode reader and creator equipped with flashlight toggle, historical log, and quick clipboard actions.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (15k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.qr_scanner" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 14: To Buy -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/to-buy.png" alt="To Buy Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>To Buy Shopping List</h3>
+                            <span class="app-category">Shopping &amp; Tasks</span>
+                        </div>
+                    </div>
+                    <p>Lightweight grocery checklist and smart shopping assistant featuring categorized grocery items, price totalers, and offline sync.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (10k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.to_buy" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 15: Talk Messenger -->
+                <div class="app-card" data-category="tools">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/talk.png" alt="Talk Icon" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Talk Messenger</h3>
+                            <span class="app-category">Social &amp; Chat</span>
+                        </div>
+                    </div>
+                    <p>High-speed real-time messaging application engineered with Flutter Riverpod, providing secure end-to-end communication and smooth chat UI.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (8k reviews)</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.talk" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
                     </div>
                 </div>
             </div>
