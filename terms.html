@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-2862340185854650">
 <title>Terms of Service | Alisa Tech Studio</title>
+<meta name="description" content="Terms of Service for Alisa Tech Studio governing the use of our websites, applications, and digital services.">
+
+<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
      crossorigin="anonymous"></script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5Y2Z6ZF6G"></script>
 <script>
@@ -16,11 +20,13 @@
 
   gtag('config', 'G-R5Y2Z6ZF6G');
 </script>
+
 <style>
   :root {
     --ink: #1a1d23;
     --muted: #5b6270;
     --accent: #4f46e5;
+    --accent-hover: #4338ca;
     --line: #e6e8ec;
     --bg-soft: #f7f8fa;
   }
@@ -29,21 +35,21 @@
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--ink);
-    line-height: 1.5;
+    line-height: 1.6;
     background: #fff;
   }
   .wrap {
-    max-width: 780px;
+    max-width: 820px;
     margin: 0 auto;
     padding: 32px 20px 48px;
   }
   .back-nav {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   .back-nav a {
     color: var(--accent);
     text-decoration: none;
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 600;
   }
   .back-nav a:hover {
@@ -72,8 +78,8 @@
     font-size: 13.5px;
   }
   h2 {
-    font-size: 19px;
-    margin: 24px 0 8px;
+    font-size: 20px;
+    margin: 26px 0 10px;
     border-bottom: 1px solid var(--line);
     padding-bottom: 4px;
   }
@@ -82,18 +88,25 @@
     font-size: 15px;
   }
   p {
-    margin: 0.55em 0;
+    margin: 0.6em 0;
   }
   ul {
-    padding-left: 20px;
-    margin: 6px 0 12px;
+    padding-left: 22px;
+    margin: 8px 0 14px;
   }
   li {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
   .ad-slot-container {
-    margin: 20px 0;
-    padding: 12px;
+    margin: 28px 0;
+    padding: 14px;
     background: var(--bg-soft);
     border: 1px dashed var(--line);
     border-radius: 8px;
@@ -110,15 +123,87 @@
   }
   footer {
     border-top: 1px solid var(--line);
-    margin-top: 36px;
-    padding-top: 18px;
+    margin-top: 40px;
+    padding-top: 20px;
     color: var(--muted);
-    font-size: 13px;
+    font-size: 13.5px;
     text-align: center;
   }
   footer a {
     color: var(--accent);
-    text-decoration: none;
+    margin: 0 4px;
+  }
+
+  /* Cookie Banner Styles */
+  .cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 16px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    font-family: inherit;
+  }
+  .cookie-banner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cookie-banner-text {
+    flex: 1 1 500px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .cookie-banner-text strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  .cookie-banner-text p {
+    color: #cbd5e1;
+    margin: 0;
+    font-size: 13px;
+  }
+  .cookie-banner-text a {
+    color: #818cf8;
+    text-decoration: underline;
+  }
+  .cookie-banner-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .cookie-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+  }
+  .cookie-btn-primary {
+    background: #4f46e5;
+    color: white;
+  }
+  .cookie-btn-primary:hover {
+    background: #4338ca;
+  }
+  .cookie-btn-secondary {
+    background: #334155;
+    color: #f1f5f9;
+  }
+  .cookie-btn-secondary:hover {
+    background: #475569;
   }
 </style>
 </head>
@@ -131,11 +216,11 @@
   <header class="hero">
     <div class="brand">Alisa Tech Studio</div>
     <h1>Terms of Service</h1>
-    <div class="meta">Last Updated: September 15, 2026 &bull; Effective Date: September 15, 2026</div>
+    <div class="meta">Effective Date: September 15, 2026 &bull; Last Updated: September 15, 2026</div>
   </header>
 
   <p>Welcome to <strong>Alisa Tech Studio</strong>. These Terms of Service ("Terms") govern your access to and use of the websites, mobile applications, software, and services provided by Alisa Tech Studio ("we," "our," or "us").</p>
-  <p>By accessing our website or downloading/using any of our applications, you agree to be bound by these Terms and our <a href="privacy_policy.html">Privacy Policy</a>. If you do not agree to these Terms, please do not use our services or apps.</p>
+  <p>By accessing our website (<a href="https://alisatechstudio.online">https://alisatechstudio.online</a>) or downloading/using any of our applications, you agree to be bound by these Terms and our <a href="privacy_policy.html">Privacy Policy</a>. If you do not agree to these Terms, please do not use our services or apps.</p>
 
   <h2>1. Use of Our Services &amp; Applications</h2>
   <p>You may use our applications and website solely for lawful purposes and in accordance with these Terms. You agree not to:</p>
@@ -144,20 +229,20 @@
     <li>Use our apps or website in any way that violates applicable local, national, or international laws.</li>
     <li>Attempt to gain unauthorized access to our servers, systems, or network infrastructure.</li>
     <li>Transmit malware, viruses, or any harmful code through our digital platforms.</li>
-    <li>Interfere with or disrupt the integrity or performance of our applications or user experience.</li>
+    <li>Interfere with or disrupt the integrity, accessibility, or security of our applications or user experience.</li>
   </ul>
 
   <h2>2. Intellectual Property Rights</h2>
-  <p>All content, features, graphics, source code, logos, trademarks, and documentation provided by Alisa Tech Studio are the exclusive property of Alisa Tech Studio and are protected by international copyright, trademark, and intellectual property laws.</p>
-  <p>You are granted a limited, revocable, non-exclusive, non-transferable license to download and use our apps for personal, non-commercial use on compatible devices.</p>
+  <p>All content, source code, app layouts, graphics, trademarks, logos, audio assets, and documentation provided by Alisa Tech Studio are the intellectual property of Alisa Tech Studio and are protected under global copyright, trademark, and proprietary laws.</p>
+  <p>You are granted a limited, revocable, non-exclusive, non-transferable license to install and use our applications for personal, non-commercial purposes on compatible devices in accordance with the rules of the Apple App Store or Google Play Store.</p>
 
   <h2>3. In-App Purchases &amp; Subscriptions</h2>
-  <p>Certain apps may offer optional digital items, features, or subscriptions. All purchases made through app stores (such as Google Play Store or Apple App Store) are subject to the terms and billing policies of the respective store platform.</p>
-  <p>Payments, refunds, and cancellations are processed according to the applicable store's policy.</p>
+  <p>Certain apps may offer optional digital items, game features, or subscriptions. All purchases made through mobile platforms (such as the Google Play Store or Apple App Store) are processed directly by and subject to the terms and billing policies of the respective store platform.</p>
+  <p>Payments, subscription renewals, cancellations, and refund requests are governed by the applicable store platform's billing policies.</p>
 
   <h2>4. Advertisements &amp; Third-Party Services</h2>
-  <p>Our website and apps may display advertisements served by verified third-party advertising partners, including Google AdSense and Google AdMob. These services may collect non-personally identifiable diagnostic and usage information in accordance with our <a href="privacy_policy.html">Privacy Policy</a>.</p>
-  <p>We do not endorse and are not responsible for the content, products, or services offered in third-party advertisements or external websites linked within ads.</p>
+  <p>Our website and mobile applications may display digital advertisements served by verified advertising networks, including Google AdSense and Google AdMob. These services may collect technical diagnostic and non-personally identifiable usage information in accordance with our <a href="privacy_policy.html">Privacy Policy</a>.</p>
+  <p>We do not endorse and are not responsible for third-party products, services, or websites linked within advertisements. Interacting with third-party advertisers is solely at your own discretion.</p>
 
   <div class="ad-slot-container">
     <span class="ad-label">Advertisement</span>
@@ -174,17 +259,17 @@
   </div>
 
   <h2>5. Disclaimers &amp; Limitation of Liability</h2>
-  <p>Our applications and website are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. We do not guarantee uninterrupted, error-free, or fully secure operation at all times.</p>
-  <p>To the fullest extent permitted by law, Alisa Tech Studio shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our applications or services.</p>
+  <p>Our applications and website are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. While we strive for optimal stability, security, and accuracy, we do not warrant that our services will always be uninterrupted or bug-free.</p>
+  <p>To the maximum extent permitted by applicable law, Alisa Tech Studio and its operators shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our applications or services.</p>
 
   <h2>6. Privacy</h2>
-  <p>Your privacy is important to us. Please review our detailed <a href="privacy_policy.html">Privacy Policy</a> to understand how we collect, use, and protect your information.</p>
+  <p>Your privacy is important to us. Please review our detailed <a href="privacy_policy.html">Privacy Policy</a> to understand how we handle cookies, analytics, advertising identifiers, and user data.</p>
 
   <h2>7. Changes to These Terms</h2>
-  <p>We reserve the right to modify these Terms at any time. Changes will be posted on this page with an updated revision date. Continued use of our website or applications after changes constitutes acceptance of the modified Terms.</p>
+  <p>We reserve the right to modify these Terms of Service at any time. Material updates will be reflected with a revised "Last Updated" date at the top of this document. Continued use of our website or applications after modifications constitutes acceptance of the updated Terms.</p>
 
   <h2>8. Contact Us</h2>
-  <p>For questions or inquiries concerning these Terms of Service, please contact us at:</p>
+  <p>For questions or inquiries regarding these Terms of Service, please contact us at:</p>
   <p>
     <strong>Alisa Tech Studio</strong><br>
     Email: <a href="mailto:alisatechstudio@gmail.com">alisatechstudio@gmail.com</a><br>
@@ -199,5 +284,45 @@
     <a href="index.html">Home</a>
   </footer>
 </div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie Preferences">
+  <div class="cookie-banner-content">
+    <div class="cookie-banner-text">
+      <strong>🍪 Cookie Policy &amp; Privacy Choices</strong>
+      <p>We use cookies and device identifiers to enhance navigation, analyze site traffic, and deliver personalized ads through Google AdSense. Read our <a href="privacy_policy.html">Privacy Policy</a> to learn more.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-secondary">Decline Optional</button>
+      <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-primary">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var banner = document.getElementById('cookieConsentBanner');
+    if (!banner) return;
+    var consent = localStorage.getItem('ats_cookie_consent');
+    if (!consent) {
+      banner.style.display = 'block';
+    }
+    var acceptBtn = document.getElementById('acceptCookiesBtn');
+    var rejectBtn = document.getElementById('rejectCookiesBtn');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'declined');
+        banner.style.display = 'none';
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>

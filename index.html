@@ -975,6 +975,117 @@
                 text-align: center;
             }
         }
+
+        /* --- AdSense Compliant Banner Containers --- */
+        .ad-banner-section {
+            padding: 1.8rem 0;
+            background: transparent;
+        }
+
+        .ad-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem;
+            background: #ffffff;
+            border: 1px dashed var(--card-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            min-height: 100px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .ad-notice {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        /* --- Cookie Consent Banner --- */
+        .cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 16px 20px;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+            z-index: 9999;
+            font-family: inherit;
+        }
+
+        .cookie-banner-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-banner-text {
+            flex: 1 1 500px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .cookie-banner-text strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .cookie-banner-text p {
+            color: #cbd5e1;
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .cookie-banner-text a {
+            color: #818cf8;
+            text-decoration: underline;
+        }
+
+        .cookie-banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .cookie-btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cookie-btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .cookie-btn-secondary {
+            background: #334155;
+            color: #f1f5f9;
+        }
+
+        .cookie-btn-secondary:hover {
+            background: #475569;
+        }
     </style>
 </head>
 
@@ -995,7 +1106,8 @@
                 <li><a href="#tech">Technologies</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="privacy_policy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
                 <li><a href="#contact" class="nav-btn">Get In Touch</a></li>
             </ul>
         </div>
@@ -1858,7 +1970,45 @@
                 }, 6000);
             }, 800);
         }
+
+        // Cookie Consent Banner Handling
+        (function() {
+            var banner = document.getElementById('cookieConsentBanner');
+            if (!banner) return;
+            var consent = localStorage.getItem('ats_cookie_consent');
+            if (!consent) {
+                banner.style.display = 'block';
+            }
+            var acceptBtn = document.getElementById('acceptCookiesBtn');
+            var rejectBtn = document.getElementById('rejectCookiesBtn');
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('ats_cookie_consent', 'accepted');
+                    banner.style.display = 'none';
+                });
+            }
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', function() {
+                    localStorage.setItem('ats_cookie_consent', 'declined');
+                    banner.style.display = 'none';
+                });
+            }
+        })();
     </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie Preferences">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <strong>🍪 Cookie Policy &amp; Privacy Choices</strong>
+                <p>We use cookies and device identifiers to enhance navigation, analyze site traffic, and deliver personalized ads through Google AdSense. Read our <a href="privacy_policy.html">Privacy Policy</a> to learn more.</p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-secondary">Decline Optional</button>
+                <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-primary">Accept All</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
