@@ -301,44 +301,6 @@
             transform: translateY(-2px);
         }
 
-        /* --- Stats Row --- */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            background: var(--bg-white);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            padding: 1.8rem 2rem;
-            box-shadow: var(--shadow-card);
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .stat-item {
-            text-align: center;
-            border-right: 1px solid var(--card-border);
-        }
-
-        .stat-item:last-child {
-            border-right: none;
-        }
-
-        .stat-num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-label {
-            font-size: 0.88rem;
-            color: var(--body-text);
-            font-weight: 500;
-        }
-
         /* --- AdSense Friendly Container --- */
         .ad-banner-section {
             padding: 1.8rem 0;
@@ -951,15 +913,6 @@
                 font-size: 2.8rem;
             }
 
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .stat-item:nth-child(2) {
-                border-right: none;
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -1002,22 +955,6 @@
 
             .hero p {
                 font-size: 1.05rem;
-            }
-
-            .stats-row {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
-
-            .stat-item {
-                border-right: none;
-                border-bottom: 1px solid var(--card-border);
-                padding-bottom: 1rem;
-            }
-
-            .stat-item:last-child {
-                border-bottom: none;
-                padding-bottom: 0;
             }
 
             .section-title {
@@ -1081,26 +1018,6 @@
                             style="height: 48px; border-radius: 10px;">
                     </a>
                     <a href="#contact" class="btn-secondary">Request a Quote</a>
-                </div>
-            </div>
-
-            <!-- Stats Banner -->
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="stat-num">20+</div>
-                    <div class="stat-label">Applications Built</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">500K+</div>
-                    <div class="stat-label">Global Downloads</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">100%</div>
-                    <div class="stat-label">Cross-Platform Ready</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">99.9%</div>
-                    <div class="stat-label">Service Reliability</div>
                 </div>
             </div>
         </div>
