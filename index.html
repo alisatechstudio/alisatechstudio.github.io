@@ -605,6 +605,28 @@
             color: var(--secondary);
         }
 
+        .play-badge-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            line-height: 0;
+        }
+
+        .play-badge {
+            height: 36px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .play-badge-link:hover .play-badge {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
         /* --- Tech Stack Section --- */
         .tech-section {
             padding: 4.5rem 0;
@@ -1054,6 +1076,9 @@
                 <p>Alisa Tech Studio specializes in building intuitive, high-performance Flutter mobile applications, scalable web software, and bespoke digital experiences crafted for business growth.</p>
                 <div class="hero-actions">
                     <a href="#apps" class="btn-primary">Explore Our Apps &rarr;</a>
+                    <a href="#apps" class="play-badge-link" aria-label="Available on Google Play">
+                        <img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge" style="height: 48px; border-radius: 10px;">
+                    </a>
                     <a href="#contact" class="btn-secondary">Request a Quote</a>
                 </div>
             </div>
@@ -1211,7 +1236,7 @@
                     <p>High-speed WireGuard-powered VPN with advanced AES encryption, zero activity logging, Material 3 theming, and low-latency server hops.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (18k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.alisa_vpn" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.alisa_vpn" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1229,7 +1254,7 @@
                     <p>Comprehensive Bangladeshi and international news portal aggregator featuring curated channels, breaking push alerts, and smooth in-app reading.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (22k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.news_all_in_one" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.news_all_in_one" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1247,7 +1272,7 @@
                     <p>Challenging, physics-tuned trajectory maze game where players navigate complex arrow labyrinths with precision maneuvers.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.7 (14k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.arrow_escape" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.arrow_escape" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1265,7 +1290,7 @@
                     <p>Delightful match-3 casual adventure packed with vibrant fruit cascades, exciting boosters, combo streaks, and hundreds of levels.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (35k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.fruit_crush_saga" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.fruit_crush_saga" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1283,7 +1308,7 @@
                     <p>Soothing color-sorting liquid puzzle engineered to relieve stress, exercise logical planning, and provide satisfying particle effects.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (29k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.color_sort" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.color_sort" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1301,7 +1326,7 @@
                     <p>Advanced 3D Ludo board game featuring realistic physics dice rolling, smart AI bots, local pass &amp; play, and online multiplayer rooms.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (40k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatecstudio.lodu_boss" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatecstudio.lodu_boss" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1319,7 +1344,7 @@
                     <p>Clean, distraction-free Sudoku number puzzle with 5 difficulty modes, auto-save, note-taking helpers, and offline daily challenges.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (26k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.sudoku" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.sudoku" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1337,7 +1362,7 @@
                     <p>Interactive arithmetic puzzles, numerical patterns, and brain teasers designed to sharpen mathematical acuity and mental calculation.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (16k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.math_puzzle" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.math_puzzle" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1355,7 +1380,7 @@
                     <p>Step-by-step German learning course tailored to the CEFR A1 &amp; A2 syllabus with clear grammar tips, audio recordings, and vocabulary drills.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (19k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.german_a1" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.german_a1" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1373,7 +1398,7 @@
                     <p>30-Day beginner-to-intermediate Italian course with conversational practice, essential grammar rules, audio cards, and progress quizzes.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (12k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.italian_a1" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.italian_a1" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1391,7 +1416,7 @@
                     <p>Real-time sports fixture tracker providing international match schedules, tournament tables, score alerts, and live event telemetry.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.7 (31k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.live_sports_tv" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.live_sports_tv" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1409,7 +1434,7 @@
                     <p>Smart personal expense manager with visual budget breakdown charts, recurring billing reminders, and exportable financial summaries.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.9 (24k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.personal_finance_tracker" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.personal_finance_tracker" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1427,7 +1452,7 @@
                     <p>Instant-detection QR code and barcode reader and creator equipped with flashlight toggle, historical log, and quick clipboard actions.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (15k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.qr_scanner" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.qr_scanner" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1445,7 +1470,7 @@
                     <p>Lightweight grocery checklist and smart shopping assistant featuring categorized grocery items, price totalers, and offline sync.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.8 (10k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.to_buy" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.to_buy" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1463,7 +1488,7 @@
                     <p>High-speed real-time messaging application engineered with Flutter Riverpod, providing secure end-to-end communication and smooth chat UI.</p>
                     <div class="app-footer">
                         <span class="app-rating">★ 4.7 (8k reviews)</span>
-                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.talk" target="_blank" rel="noopener noreferrer" class="app-btn">Google Play &rarr;</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.talk" target="_blank" rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"></a>
                     </div>
                 </div>
             </div>
