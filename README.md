@@ -33,9 +33,12 @@ open index.html
 ## 📁 Project Structure
 
 ```
-├── index.html      # Main website page
-├── README.md       # This file
-└── .git/          # Git configuration
+├── index.html           # Main website page
+├── privacy_policy.html  # Privacy Policy page
+├── terms.html           # Terms of Service page
+├── ads.txt              # Authorized Digital Sellers configuration
+├── README.md            # Documentation
+└── .git/                # Git configuration
 ```
 
 ## 💼 Services

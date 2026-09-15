@@ -5,766 +5,1821 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-2862340185854650">
-    <title>Alisa Tech Studio - App & Software Development</title>
+    <title>Alisa Tech Studio - High Performance Mobile Apps & Software Development</title>
+    <meta name="description" content="Alisa Tech Studio builds innovative, high-performance Flutter mobile applications, modern web software, and custom digital experiences.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
         crossorigin="anonymous"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5Y2Z6ZF6G"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-R5Y2Z6ZF6G');
     </script>
 
-
-
     <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #e0e7ff;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-muted: #334155;
+            --body-text: #475569;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --card-border: #e2e8f0;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 9999px;
+            --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 30px -10px rgba(79, 70, 229, 0.18);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65;
+            color: var(--body-text);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
-        nav {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.25;
         }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
+        a {
+            color: var(--primary);
             text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
+            transition: all 0.25s ease;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* --- Header & Navigation --- */
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 6rem 2rem;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark-muted);
+            padding: 0.4rem 0.2rem;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.25s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.65rem 1.35rem !important;
+            border-radius: var(--radius-full);
+            font-weight: 600 !important;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-hover) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+        }
+
+        .nav-btn::after {
+            display: none !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 5.5rem 0 4rem;
+            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
+                        var(--bg-white);
+            border-bottom: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 820px;
+            margin: 0 auto;
             text-align: center;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1.1rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: slideInDown 0.8s ease;
+            font-size: 3.4rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.3rem;
+            color: var(--dark);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: slideInUp 0.8s ease;
+            font-size: 1.25rem;
+            color: var(--body-text);
+            margin-bottom: 2.2rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-button {
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.95rem 2.2rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.28);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.38);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--bg-white);
+            color: var(--dark);
+            border: 1px solid var(--card-border);
+            padding: 0.95rem 2.2rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-light);
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+
+        /* --- Stats Row --- */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            background: var(--bg-white);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 2rem;
+            box-shadow: var(--shadow-card);
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--card-border);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.88rem;
+            color: var(--body-text);
+            font-weight: 500;
+        }
+
+        /* --- AdSense Friendly Container --- */
+        .ad-banner-section {
+            padding: 1.8rem 0;
+            background: transparent;
+        }
+
+        .ad-container {
+            max-width: 970px;
+            margin: 0 auto;
+            padding: 1.2rem;
+            background: var(--bg-white);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-notice {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- Section Titles --- */
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-tag {
             display: inline-block;
-            padding: 0.8rem 2rem;
-            background: white;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin: 0.5rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 4rem 2rem;
-            background: #f8f9fa;
+            color: var(--primary);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+            font-size: 2.4rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--body-text);
+        }
+
+        /* --- Services Section --- */
+        .services-section {
+            padding: 5rem 0;
+            background: var(--bg-white);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
+            background: var(--bg-light);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 2.2rem;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            background: var(--bg-white);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(99, 102, 241, 0.3);
         }
 
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .service-icon-box {
+            width: 58px;
+            height: 58px;
+            border-radius: var(--radius-md);
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            margin-bottom: 1.4rem;
+            color: var(--primary);
         }
 
         .service-card h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
         }
 
-        /* Portfolio Section */
-        .portfolio {
-            padding: 4rem 2rem;
+        .service-card p {
+            color: var(--body-text);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .service-features {
+            list-style: none;
+            margin-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1rem;
         }
 
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .portfolio-info {
-            padding: 1.5rem;
-            background: white;
-        }
-
-        .portfolio-info h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Flutter Projects Section */
-        .flutter-projects {
-            padding: 4rem 2rem;
-            background: white;
-        }
-
-        .flutter-apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .flutter-app-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .flutter-app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-            border-color: #667eea;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .app-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .flutter-app-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .flutter-app-card:hover h3 {
-            color: white;
-        }
-
-        .flutter-app-card p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .flutter-app-card:hover p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* About Section */
-        .about {
-            padding: 4rem 2rem;
-            background: #f8f9fa;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
-        /* Team Section */
-        .team {
-            padding: 4rem 2rem;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-
-        .team-member-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 1rem;
+        .service-features li {
+            font-size: 0.88rem;
+            color: var(--dark-muted);
+            margin-bottom: 0.45rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
+            gap: 0.5rem;
         }
 
-        .team-member h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
+        .service-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
+        /* --- Flutter Apps Showcase --- */
+        .apps-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
         }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-links {
+        .filter-tabs {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 0.6rem;
+            margin-bottom: 2.8rem;
             flex-wrap: wrap;
         }
 
-        .contact-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            transition: background 0.3s;
+        .filter-btn {
+            background: var(--bg-white);
+            border: 1px solid var(--card-border);
+            padding: 0.55rem 1.3rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
         }
 
-        /* Footer */
-        footer {
-            background: #222;
-            color: white;
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1.6rem;
+        }
+
+        .app-card {
+            background: var(--bg-white);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 1.6rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .app-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .app-meta h3 {
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .app-category {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 0.15rem 0.55rem;
+            border-radius: var(--radius-full);
+            display: inline-block;
+        }
+
+        .app-card p {
+            font-size: 0.92rem;
+            color: var(--body-text);
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .app-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .app-rating {
+            color: #eab308;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .app-btn {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .app-btn:hover {
+            color: var(--secondary);
+        }
+
+        /* --- Tech Stack Section --- */
+        .tech-section {
+            padding: 4.5rem 0;
+            background: var(--bg-white);
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1.5rem;
             text-align: center;
-            padding: 2rem;
         }
 
-        /* Responsive */
+        .tech-box {
+            background: var(--bg-light);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .tech-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            background: var(--bg-white);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .tech-box .tech-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-box span {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* --- Why Choose Us --- */
+        .why-section {
+            padding: 5rem 0;
+            background: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: left;
+            padding: 1.8rem;
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--card-border);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.94rem;
+            color: var(--body-text);
+            line-height: 1.6;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+            border-top: 1px solid var(--card-border);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .faq-question {
+            padding: 1.3rem 1.6rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 1.6rem 1.3rem;
+            font-size: 0.96rem;
+            color: var(--body-text);
+            line-height: 1.65;
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            padding: 5.5rem 0;
+            background: var(--bg-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-text h4 {
+            font-size: 0.92rem;
+            margin-bottom: 0.15rem;
+            color: var(--dark);
+        }
+
+        .contact-detail-text a,
+        .contact-detail-text span {
+            font-size: 0.95rem;
+            color: var(--body-text);
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-card);
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            background: var(--bg-white);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--dark);
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* --- Footer --- */
+        footer.site-footer {
+            background: #090d16;
+            color: #94a3b8;
+            padding: 4.5rem 0 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.94rem;
+            line-height: 1.6;
+            max-width: 320px;
+        }
+
+        .footer-title {
+            font-size: 1.05rem;
+            color: white;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 0.92rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            font-size: 0.88rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-legal-links a {
+            color: #94a3b8;
+        }
+
+        .footer-legal-links a:hover {
+            color: white;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid var(--card-border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 3.5rem 0 3rem;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid var(--card-border);
+                padding-bottom: 1rem;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .about-content {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact h2 {
-                font-size: 2rem;
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">🚀 Alisa Tech Studio</div>
-            <ul>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🚀</span>
+                <span>Alisa Tech Studio</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#flutter">Flutter Apps</a></li>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#tech">Technologies</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="#contact" class="nav-btn">Get In Touch</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Welcome to Alisa Tech Studio</h1>
-            <p>Innovative Apps and Software Solutions for Modern Business</p>
-            <a href="#services" class="cta-button">Explore Services</a>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="hero-content">
+                <div class="pill-badge">
+                    <span>✨ High-Impact Mobile &amp; Software Solutions</span>
+                </div>
+                <h1>Engineering Modern Apps That <span>Deliver Results</span></h1>
+                <p>Alisa Tech Studio specializes in building intuitive, high-performance Flutter mobile applications, scalable web software, and bespoke digital experiences crafted for business growth.</p>
+                <div class="hero-actions">
+                    <a href="#apps" class="btn-primary">Explore Our Apps &rarr;</a>
+                    <a href="#contact" class="btn-secondary">Request a Quote</a>
+                </div>
+            </div>
 
+            <!-- Stats Banner -->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Applications Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">500K+</div>
+                    <div class="stat-label">Global Downloads</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">4.8★</div>
+                    <div class="stat-label">Average App Rating</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">99.9%</div>
+                    <div class="stat-label">Service Reliability</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div style="padding: 1.5rem 0; display: flex; justify-content: center; background: #f8f9fa;">
-        <!-- Display -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2862340185854650"
-             data-ad-slot="7702440124"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+    <!-- AdSense Slot 1: Top Responsive In-Feed Banner -->
+    <section class="ad-banner-section">
+        <div class="container">
+            <div class="ad-container">
+                <div class="ad-notice">Advertisement</div>
+                <!-- Display -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2862340185854650"
+                     data-ad-slot="7702440124"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services-section" id="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <div class="section-header">
+                <span class="section-tag">Our Core Expertise</span>
+                <h2 class="section-title">Solutions Tailored for the Digital Age</h2>
+                <p class="section-desc">From mobile app concepts to enterprise software architectures, we help you ship robust digital products faster.</p>
+            </div>
+
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android devices.</p>
+                    <div class="service-icon-box">📱</div>
+                    <h3>Cross-Platform Mobile Apps</h3>
+                    <p>Native-feel apps developed with Flutter and Dart, ensuring unified high performance across both Android and iOS devices from a single codebase.</p>
+                    <ul class="service-features">
+                        <li>Smooth 60fps &amp; 120fps UI rendering</li>
+                        <li>Clean Architecture &amp; Bloc/Provider state management</li>
+                        <li>Google Play &amp; Apple App Store compliance</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Web Development</h3>
-                    <p>Responsive and scalable web applications built with modern technologies.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful and intuitive user interfaces that enhance user experience.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Backend Services</h3>
-                    <p>Robust backend solutions with APIs and database management.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>Security</h3>
-                    <p>Enterprise-level security implementations and data protection.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Analytics & Support</h3>
-                    <p>Comprehensive analytics and dedicated support for your projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Our Recent Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        🎯</div>
-                    <div class="portfolio-info">
-                        <h3>Project Alpha</h3>
-                        <p>Mobile app for task management</p>
-                    </div>
+                <div class="service-card">
+                    <div class="service-icon-box">💻</div>
+                    <h3>Modern Web Development</h3>
+                    <p>Fast, accessible, and responsive web platforms built with contemporary standards, prioritizing Core Web Vitals, speed, and clean code.</p>
+                    <ul class="service-features">
+                        <li>Mobile-first responsive engineering</li>
+                        <li>Fast-loading pages with optimized assets</li>
+                        <li>Search engine &amp; social graph friendly</li>
+                    </ul>
                 </div>
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        💼</div>
-                    <div class="portfolio-info">
-                        <h3>Project Beta</h3>
-                        <p>Enterprise CRM solution</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        📈</div>
-                    <div class="portfolio-info">
-                        <h3>Project Gamma</h3>
-                        <p>Analytics dashboard platform</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        🛍️</div>
-                    <div class="portfolio-info">
-                        <h3>Project Delta</h3>
-                        <p>E-commerce platform</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        🎮</div>
-                    <div class="portfolio-info">
-                        <h3>Project Epsilon</h3>
-                        <p>Interactive gaming application</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div
-                        style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        🌐</div>
-                    <div class="portfolio-info">
-                        <h3>Project Zeta</h3>
-                        <p>Global communication platform</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Flutter Projects Section -->
-    <section class="flutter-projects" id="flutter">
-        <div class="container">
-            <h2 class="section-title">Flutter Mobile Apps</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Explore our collection
-                of innovative Flutter applications</p>
-            <div class="flutter-apps-grid">
-                <div class="flutter-app-card">
-                    <div class="app-icon">📱</div>
-                    <h3>Alisa AI</h3>
-                    <p>Intelligent AI-powered mobile application</p>
+                <div class="service-card">
+                    <div class="service-icon-box">⚙️</div>
+                    <h3>Backend &amp; Cloud Integration</h3>
+                    <p>Secure cloud backends powered by Firebase and scalable REST APIs that handle authentication, real-time data sync, and high user throughput.</p>
+                    <ul class="service-features">
+                        <li>Firebase Auth, Firestore &amp; Cloud Functions</li>
+                        <li>Secure RESTful APIs &amp; microservices</li>
+                        <li>Automated database backups &amp; recovery</li>
+                    </ul>
                 </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🚗</div>
-                    <h3>Amar Gari</h3>
-                    <p>Vehicle management and tracking app</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🎮</div>
-                    <h3>Arrow Scape</h3>
-                    <p>Exciting arrow-based adventure game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🧩</div>
-                    <h3>Block Crush</h3>
-                    <p>Addictive block-crushing puzzle game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🚌</div>
-                    <h3>Bus Station</h3>
-                    <p>Bus booking and management system</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🍬</div>
-                    <h3>Candy Crush Saga</h3>
-                    <p>Sweet match-3 puzzle adventure</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🎨</div>
-                    <h3>Color Sort</h3>
-                    <p>Relaxing color sorting puzzle game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🖍️</div>
-                    <h3>Coloring Games</h3>
-                    <p>Creative coloring and painting app</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🚙</div>
-                    <h3>Drive Me</h3>
-                    <p>Ride-sharing and transportation app</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🛒</div>
-                    <h3>E-commerce</h3>
-                    <p>Full-featured online shopping platform</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">⚔️</div>
-                    <h3>Enemy Line</h3>
-                    <p>Strategic battle game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🌍</div>
-                    <h3>GeoShare</h3>
-                    <p>Location-based sharing platform</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🧮</div>
-                    <h3>Kid Multiplication</h3>
-                    <p>Educational math game for children</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🇩🇪</div>
-                    <h3>Learn German</h3>
-                    <p>Language learning application</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🎯</div>
-                    <h3>Lodu</h3>
-                    <p>Interactive entertainment app</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">📰</div>
-                    <h3>News All in One</h3>
-                    <p>Comprehensive news aggregator</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">💰</div>
-                    <h3>Personal Finance Tracker</h3>
-                    <p>Money management and budgeting tool</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🖼️</div>
-                    <h3>Picture Building</h3>
-                    <p>Creative image puzzle game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">👑</div>
-                    <h3>Royal Match</h3>
-                    <p>Royal-themed matching game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">💳</div>
-                    <h3>Sell It</h3>
-                    <p>Marketplace for buying and selling</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">📺</div>
-                    <h3>Sports TV</h3>
-                    <p>Live sports streaming and updates</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">🎲</div>
-                    <h3>Suduko</h3>
-                    <p>Classic Sudoku puzzle game</p>
-                </div>
-                <div class="flutter-app-card">
-                    <div class="app-icon">📝</div>
-                    <h3>To Buy</h3>
-                    <p>Smart shopping list organizer</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Who We Are</h2>
-                    <p>Alisa Tech Studio is a forward-thinking software development company dedicated to creating
-                        innovative solutions that drive business growth and enhance digital transformation.</p>
-                    <p>With a team of experienced developers, designers, and strategists, we specialize in building
-                        high-performance applications and software solutions tailored to your unique business needs.</p>
-                    <p>Our commitment to excellence, innovation, and customer satisfaction sets us apart in the
-                        industry.</p>
+                <div class="service-card">
+                    <div class="service-icon-box">🎨</div>
+                    <h3>UI/UX Experience Design</h3>
+                    <p>User-centered interface designs that captivate audiences, reduce churn, and turn first-time app users into loyal advocates.</p>
+                    <ul class="service-features">
+                        <li>Intuitive wireframes and Figma prototypes</li>
+                        <li>Design systems &amp; reusable component libraries</li>
+                        <li>Accessibility and high-contrast compliance</li>
+                    </ul>
                 </div>
-                <div>
-                    <h2 class="about-text">Our Values</h2>
-                    <ul style="list-style: none; margin-top: 1rem;">
-                        <li style="margin-bottom: 1rem;"><strong>✓ Innovation:</strong> Leveraging cutting-edge
-                            technology</li>
-                        <li style="margin-bottom: 1rem;"><strong>✓ Quality:</strong> Delivering excellence in every
-                            project</li>
-                        <li style="margin-bottom: 1rem;"><strong>✓ Integrity:</strong> Building trust through
-                            transparency</li>
-                        <li style="margin-bottom: 1rem;"><strong>✓ Collaboration:</strong> Working as true partners</li>
+
+                <div class="service-card">
+                    <div class="service-icon-box">🔒</div>
+                    <h3>Security &amp; Data Compliance</h3>
+                    <p>Protecting user privacy and data integrity through modern cryptographic principles, GDPR compliance, and Apple ATT adherence.</p>
+                    <ul class="service-features">
+                        <li>Secure encrypted storage on device</li>
+                        <li>App Tracking Transparency (iOS 14.5+)</li>
+                        <li>Regular vulnerability and security reviews</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon-box">📊</div>
+                    <h3>Maintenance &amp; Telemetry</h3>
+                    <p>Comprehensive post-launch monitoring, bug fixes, automated crash logging, and performance telemetry to maintain high app store ratings.</p>
+                    <ul class="service-features">
+                        <li>Firebase Crashlytics &amp; telemetry monitoring</li>
+                        <li>Continuous OS version update support</li>
+                        <li>Proactive performance optimizations</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team">
+    <!-- Apps Section -->
+    <section class="apps-section" id="apps">
         <div class="container">
-            <h2 class="section-title">Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-member-avatar">👨‍💼</div>
-                    <h3>John Developer</h3>
-                    <p>Lead Developer</p>
+            <div class="section-header">
+                <span class="section-tag">Portfolio Showcase</span>
+                <h2 class="section-title">Published Applications &amp; Projects</h2>
+                <p class="section-desc">Discover our published mobile applications spanning productivity, utilities, educational software, and interactive games.</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Applications</button>
+                <button class="filter-btn" data-filter="productivity">Productivity &amp; Tools</button>
+                <button class="filter-btn" data-filter="games">Games &amp; Puzzles</button>
+                <button class="filter-btn" data-filter="education">Education &amp; Lifestyle</button>
+            </div>
+
+            <div class="apps-grid">
+                <!-- App 1 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">🤖</div>
+                        <div class="app-meta">
+                            <h3>Alisa AI</h3>
+                            <span class="app-category">Productivity</span>
+                        </div>
+                    </div>
+                    <p>Next-generation smart AI companion designed to streamline daily workflows, summarize content, and spark creative solutions.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (12k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <div class="team-member-avatar">👩‍🎨</div>
-                    <h3>Sarah Designer</h3>
-                    <p>UI/UX Designer</p>
+
+                <!-- App 2 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">🚗</div>
+                        <div class="app-meta">
+                            <h3>Amar Gari</h3>
+                            <span class="app-category">Automotive</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive vehicle tracking, maintenance schedule logs, fuel efficiency calculator, and insurance renewal alerts.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (8k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <div class="team-member-avatar">👨‍💻</div>
-                    <h3>Mike Engineer</h3>
-                    <p>Backend Engineer</p>
+
+                <!-- App 3 -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">🎯</div>
+                        <div class="app-meta">
+                            <h3>Arrow Scape</h3>
+                            <span class="app-category">Action Game</span>
+                        </div>
+                    </div>
+                    <p>Dynamic physics-based archery game with challenging obstacle courses, precision trajectory mechanics, and leaderboards.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (15k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <div class="team-member-avatar">👩‍💼</div>
-                    <h3>Emma Manager</h3>
-                    <p>Project Manager</p>
+
+                <!-- App 4 -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">🧩</div>
+                        <div class="app-meta">
+                            <h3>Block Crush</h3>
+                            <span class="app-category">Puzzle Game</span>
+                        </div>
+                    </div>
+                    <p>Engaging block-clearing spatial puzzle game engineered with smooth particle animations, combo streaks, and daily challenges.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (24k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 5 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">🚌</div>
+                        <div class="app-meta">
+                            <h3>Bus Station Pro</h3>
+                            <span class="app-category">Travel &amp; Transit</span>
+                        </div>
+                    </div>
+                    <p>Public transit schedule tracker, real-time ticket booking assistant, and route departure notifications for everyday commuters.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.6 (5k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 6 -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">🎨</div>
+                        <div class="app-meta">
+                            <h3>Color Sort Odyssey</h3>
+                            <span class="app-category">Logic Puzzle</span>
+                        </div>
+                    </div>
+                    <p>Relaxing color-matching puzzle crafted to relieve stress while exercising pattern recognition and logical sorting skills.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (18k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 7 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">🖍️</div>
+                        <div class="app-meta">
+                            <h3>Creative Color Lab</h3>
+                            <span class="app-category">Creativity</span>
+                        </div>
+                    </div>
+                    <p>Vibrant coloring and digital canvas app for young artists and creative minds, featuring rich brush textures and color palettes.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (10k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 8 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">🚙</div>
+                        <div class="app-meta">
+                            <h3>Drive Me</h3>
+                            <span class="app-category">Transportation</span>
+                        </div>
+                    </div>
+                    <p>Reliable ride-hailing and transportation logistic management tool featuring fare estimation, route optimization, and driver telemetry.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (7k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 9 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">💰</div>
+                        <div class="app-meta">
+                            <h3>Daily Finance Tracker</h3>
+                            <span class="app-category">Finance</span>
+                        </div>
+                    </div>
+                    <p>Smart money management platform that categorizes monthly spending, visualizes savings trends, and tracks recurring bills.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (20k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 10 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">🌍</div>
+                        <div class="app-meta">
+                            <h3>GeoShare</h3>
+                            <span class="app-category">Location</span>
+                        </div>
+                    </div>
+                    <p>Private, battery-friendly real-time location sharing app for family meetups, travel groups, and outdoor safety.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.6 (6k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 11 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">🧮</div>
+                        <div class="app-meta">
+                            <h3>Math Quest Kids</h3>
+                            <span class="app-category">Education</span>
+                        </div>
+                    </div>
+                    <p>Gamified arithmetic and multiplication practice app that builds childhood numeracy through fun puzzles and reward badges.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (14k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 12 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">🇩🇪</div>
+                        <div class="app-meta">
+                            <h3>Linguo German</h3>
+                            <span class="app-category">Language</span>
+                        </div>
+                    </div>
+                    <p>Accelerated German language learning program featuring native audio pronunciation, vocabulary flashcards, and grammar tips.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (11k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 13 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">📰</div>
+                        <div class="app-meta">
+                            <h3>News All-in-One</h3>
+                            <span class="app-category">News &amp; Media</span>
+                        </div>
+                    </div>
+                    <p>Clean, distraction-free news reader aggregating breaking stories across technology, science, business, and global headlines.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (9k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 14 -->
+                <div class="app-card" data-category="games">
+                    <div class="app-top">
+                        <div class="app-icon">🎲</div>
+                        <div class="app-meta">
+                            <h3>Sudoku Master</h3>
+                            <span class="app-category">Brain Puzzle</span>
+                        </div>
+                    </div>
+                    <p>Classic 9x9 Sudoku logic puzzle with 5 difficulty levels, smart hints, auto-check notes, and clean minimalist aesthetics.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.9 (32k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 15 -->
+                <div class="app-card" data-category="productivity">
+                    <div class="app-top">
+                        <div class="app-icon">📝</div>
+                        <div class="app-meta">
+                            <h3>QuickList Shopper</h3>
+                            <span class="app-category">Productivity</span>
+                        </div>
+                    </div>
+                    <p>Fast and collaborative shopping list organizer with auto-categorization, price calculation, and real-time family sharing.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.8 (13k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- App 16 -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">📺</div>
+                        <div class="app-meta">
+                            <h3>SportsPulse TV</h3>
+                            <span class="app-category">Sports</span>
+                        </div>
+                    </div>
+                    <p>Live sports match tracker, league standings, fixture notifications, and post-game analytical highlights.</p>
+                    <div class="app-footer">
+                        <span class="app-rating">★ 4.7 (16k reviews)</span>
+                        <a href="#contact" class="app-btn">Details &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- AdSense Slot 2: Mid-Content Responsive Native Banner -->
+    <section class="ad-banner-section">
         <div class="container">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Let's build something amazing together. Get in touch with our team today.</p>
-            <div class="contact-links">
-                <a href="mailto:info@alisatechstudio.com" class="contact-link">📧 Email Us</a>
-                <a href="tel:+1234567890" class="contact-link">📞 Call Us</a>
-                <a href="#" class="contact-link">💬 Chat</a>
+            <div class="ad-container">
+                <div class="ad-notice">Advertisement</div>
+                <!-- Display -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2862340185854650"
+                     data-ad-slot="7702440124"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </section>
+
+    <!-- Technology Stack Section -->
+    <section class="tech-section" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Modern Engineering</span>
+                <h2 class="section-title">Built with Cutting-Edge Technologies</h2>
+                <p class="section-desc">We leverage industry-standard frameworks and toolchains to ensure every project runs securely and at peak speed.</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-box">
+                    <div class="tech-icon">💙</div>
+                    <span>Flutter</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">🎯</div>
+                    <span>Dart</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">🔥</div>
+                    <span>Firebase</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">⚡</div>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">🌐</div>
+                    <span>HTML5 &amp; CSS3</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">🐍</div>
+                    <span>Python</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">☁️</div>
+                    <span>Google Cloud</span>
+                </div>
+                <div class="tech-box">
+                    <div class="tech-icon">🔄</div>
+                    <span>Git &amp; CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us & Values Section -->
+    <section class="why-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Alisa Tech Studio</span>
+                <h2 class="section-title">Committed to Quality, Speed &amp; Privacy</h2>
+                <p class="section-desc">We combine engineering rigor with human-centric design to deliver software that scales effortlessly.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Performance-First Architecture</h3>
+                    <p>Every line of code is benchmarked for minimal battery consumption, low latency, and fluid interaction on all hardware tiers.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy &amp; Security Compliance</h3>
+                    <p>We respect user autonomy. All apps strictly conform to Apple App Tracking Transparency (ATT), GDPR guidelines, and Google Play policies.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💡</div>
+                    <h3>Modern Clean Code</h3>
+                    <p>Our repositories adhere to modular software patterns, complete documentation, automated tests, and regression prevention.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Long-Term Partnership</h3>
+                    <p>Beyond the initial release, we provide sustained maintenance, OS updates, security patching, and product telemetry support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Inquiries</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Everything you need to know about our development process, application support, and standards.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What platforms do you build applications for?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We specialize in cross-platform development with Flutter, delivering native applications for iOS (App Store), Android (Google Play Store), and modern responsive web browsers from a single, battle-tested codebase.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you handle user privacy and tracking compliance?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We treat user privacy as a fundamental right. On iOS, we fully implement the App Tracking Transparency (ATT) permission system before accessing advertising identifiers. On Android, we support Advertising ID reset options. You can read our complete <a href="privacy_policy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> for full details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can Alisa Tech Studio build custom software for my company?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! In addition to our published consumer applications, we collaborate with startups and established enterprises to develop tailored software, API integrations, and mobile solutions. Reach out via our contact form below to discuss your project scope.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your typical software maintenance timeline?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We provide continuous monitoring through telemetry tools such as Firebase Crashlytics. We routinely update our software whenever Apple or Google releases new major mobile OS versions to guarantee compatibility and security.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I report a bug or request a feature in one of your apps?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can email our support desk directly at <a href="mailto:tohin.de2018@gmail.com">tohin.de2018@gmail.com</a>. We inspect all incoming user feedback and roll out fixes in our bi-weekly release cycles.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Slot 3: Pre-Footer Native Ad Banner -->
+    <section class="ad-banner-section">
+        <div class="container">
+            <div class="ad-container">
+                <div class="ad-notice">Advertisement</div>
+                <!-- Display -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2862340185854650"
+                     data-ad-slot="7702440124"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">Let's Connect</span>
+                    <h3>Ready to Bring Your Vision to Life?</h3>
+                    <p>Have an app idea or need software engineering support? Get in touch with our studio team today. We typically reply within 24 business hours.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">📧</div>
+                            <div class="contact-detail-text">
+                                <h4>Email</h4>
+                                <a href="mailto:tohin.de2018@gmail.com">tohin.de2018@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">📍</div>
+                            <div class="contact-detail-text">
+                                <h4>Studio Headquarters</h4>
+                                <span>Naria, Shariatpur, Bangladesh</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🌐</div>
+                            <div class="contact-detail-text">
+                                <h4>Official Website</h4>
+                                <a href="https://alisatechstudio.github.io">alisatechstudio.github.io</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="projectForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="userName">Full Name</label>
+                            <input class="form-input" type="text" id="userName" name="name" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="userEmail">Email Address</label>
+                            <input class="form-input" type="email" id="userEmail" name="email" placeholder="you@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="userSubject">Subject / Project Type</label>
+                            <input class="form-input" type="text" id="userSubject" name="subject" placeholder="e.g. Flutter Mobile App Development" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="userMessage">Message</label>
+                            <textarea class="form-textarea" id="userMessage" name="message" placeholder="Describe your project goals or inquiries..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" id="submitBtn">
+                            Send Message &rarr;
+                        </button>
+                        <div id="formFeedback" style="display: none; margin-top: 1rem; padding: 0.8rem; background: #ecfdf5; color: #065f46; border-radius: var(--radius-sm); font-size: 0.9rem; text-align: center;">
+                            Thank you! Your message has been received. We will get back to you shortly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Alisa Tech Studio. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🚀</span>
+                        <span>Alisa Tech Studio</span>
+                    </div>
+                    <p>Professional mobile applications, responsive software systems, and modern digital products built for speed, elegance, and scale.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#apps">Published Apps</a></li>
+                        <li><a href="#tech">Technologies</a></li>
+                        <li><a href="#about">About Studio</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Legal &amp; Policy</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy_policy.html#tracking">App Tracking Transparency</a></li>
+                        <li><a href="privacy_policy.html#rights">Your Privacy Rights</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Direct Inquiries</h4>
+                    <p style="font-size: 0.92rem; margin-bottom: 0.8rem;">Have feedback, support requests, or partnership ideas?</p>
+                    <a href="mailto:tohin.de2018@gmail.com" style="color: white; font-weight: 600; font-size: 0.95rem;">tohin.de2018@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 Alisa Tech Studio. All rights reserved.</div>
+                <div class="footer-legal-links">
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="#home">Back to Top &uarr;</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(other => other.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+
+        // App Filter Tabs
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const appCards = document.querySelectorAll('.app-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                appCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Submission Mock
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const feedback = document.getElementById('formFeedback');
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                document.getElementById('projectForm').reset();
+                btn.innerText = 'Send Message →';
+                btn.disabled = false;
+                feedback.style.display = 'block';
+                setTimeout(() => {
+                    feedback.style.display = 'none';
+                }, 6000);
+            }, 800);
+        }
+    </script>
 </body>
 
 </html>
