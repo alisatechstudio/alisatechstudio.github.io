@@ -6,7 +6,7 @@ Welcome to the official website repository for **Alisa Tech Studio** - a profess
 
 This repository hosts our company website showcasing our services, portfolio, and team information.
 
-**Live Site:** https://alisatechstudio.github.io
+**Live Site:** https://alisatechstudio.online
 
 ## 📋 About
 
@@ -48,7 +48,7 @@ Visit our website to learn more about our services and view our recent projects.
 ## 📞 Contact
 
 - 📧 Email: info@alisatechstudio.com
-- 🌐 Website: https://alisatechstudio.github.io
+- 🌐 Website: https://alisatechstudio.online
 
 ## 📄 License
 

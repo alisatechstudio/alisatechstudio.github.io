@@ -1,0 +1,6 @@
+# Robots.txt for Alisa Tech Studio (https://alisatechstudio.online)
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://alisatechstudio.online/sitemap.xml
