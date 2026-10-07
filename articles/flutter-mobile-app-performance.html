@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-2862340185854650">
+
+<!-- Primary SEO Meta Tags -->
+<title>Mastering Flutter Performance: How to Build 120 FPS Mobile Apps | Alisa Tech Studio</title>
+<meta name="title" content="Mastering Flutter Performance: How to Build 120 FPS Mobile Apps | Alisa Tech Studio">
+<meta name="description" content="In-depth guide to building high-performance Flutter mobile applications. Learn widget rebuilding optimizations, RepaintBoundary tricks, isolate concurrency, and profiling tools.">
+<meta name="keywords" content="Flutter performance, Flutter 120 fps, mobile app optimization, Dart isolate concurrency, RepaintBoundary, Flutter DevTools, Alisa Tech Studio guide">
+<meta name="author" content="Alisa Tech Studio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://alisatechstudio.online/articles/flutter-mobile-app-performance.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alisatechstudio.online/articles/flutter-mobile-app-performance.html">
+<meta property="og:title" content="Mastering Flutter Performance: Building 120 FPS Mobile Apps">
+<meta property="og:description" content="Practical architectural patterns, memory leak prevention, and frame budget optimization techniques for cross-platform Flutter developers.">
+<meta property="og:site_name" content="Alisa Tech Studio">
+<meta property="og:image" content="https://alisatechstudio.online/assets/icons/google-play-badge.png">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) & Google Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': currentConsent,
+    'ad_user_data': currentConsent,
+    'ad_personalization': currentConsent,
+    'analytics_storage': currentConsent
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-4DVT6RT8QP');
+</script>
+
+<style>
+  :root {
+    --ink: #1a1d23;
+    --muted: #5b6270;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --line: #e6e8ec;
+    --bg-soft: #f7f8fa;
+    --bg-callout: #eff6ff;
+    --code-bg: #1e293b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.7;
+    background: #fff;
+  }
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+  }
+  .back-nav {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .back-nav a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .back-nav a:hover {
+    text-decoration: underline;
+  }
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+  }
+  .category-pill {
+    display: inline-block;
+    background: var(--bg-callout);
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin: 0 0 10px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .article-byline {
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  h2 {
+    font-size: 22px;
+    margin: 34px 0 12px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 22px 0 8px;
+    color: #1e293b;
+  }
+  p, li {
+    font-size: 16px;
+    color: #334155;
+  }
+  p {
+    margin: 0.9em 0;
+  }
+  ul, ol {
+    padding-left: 24px;
+    margin: 10px 0 18px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  .callout {
+    background: var(--bg-callout);
+    border-left: 4px solid var(--accent);
+    padding: 18px 20px;
+    border-radius: 6px;
+    margin: 24px 0;
+    font-size: 15px;
+  }
+  code {
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  pre {
+    background: var(--code-bg);
+    color: #e2e8f0;
+    padding: 16px 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .ad-slot-container {
+    margin: 32px 0;
+    padding: 14px;
+    background: var(--bg-soft);
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    text-align: center;
+    min-height: 90px;
+  }
+  .ad-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    display: block;
+  }
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 48px;
+    padding-top: 24px;
+    color: var(--muted);
+    font-size: 13.5px;
+    text-align: center;
+  }
+  footer a {
+    color: var(--accent);
+    margin: 0 4px;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Cookie Banner */
+  .cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 16px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+  }
+  .cookie-banner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cookie-banner-text {
+    flex: 1 1 500px;
+    font-size: 13.5px;
+  }
+  .cookie-banner-text strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cookie-banner-text p {
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .cookie-banner-text a {
+    color: #818cf8;
+    text-decoration: underline;
+  }
+  .cookie-banner-actions {
+    display: flex;
+    gap: 10px;
+  }
+  .cookie-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+  .cookie-btn-primary {
+    background: #4f46e5;
+    color: white;
+  }
+  .cookie-btn-secondary {
+    background: #334155;
+    color: #f1f5f9;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="back-nav">
+    <a href="../articles.html">&larr; Back to Articles</a>
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About Us</a>
+  </div>
+
+  <header class="hero">
+    <span class="category-pill">Software Engineering &amp; Architecture</span>
+    <h1>Mastering Flutter Performance: How We Build Silky 120 FPS Mobile Apps</h1>
+    <div class="article-byline">By Alisa Tech Studio Engineering Team &bull; Published October 2026 &bull; 8 min read</div>
+  </header>
+
+  <p>
+    Delivering a responsive 60 or 120 frames-per-second (FPS) mobile experience is essential for keeping users engaged. With modern mobile displays sporting 90Hz and 120Hz refresh rates, mobile developers have a strict frame budget: at 120Hz, each frame must compute and render within <strong>8.33 milliseconds</strong>. If a frame exceeds this threshold, the rendering engine drops frames, producing noticeable visual stutter (jank).
+  </p>
+  <p>
+    At <strong>Alisa Tech Studio</strong>, where we engineer fast-paced cognitive puzzle games and high-utility applications, maintaining peak performance across hundreds of different Android and iOS devices is one of our primary architectural goals. In this guide, we break down our core principles for achieving flawless rendering in Flutter.
+  </p>
+
+  <h2>1. Understanding the Flutter Rendering Pipeline</h2>
+  <p>
+    Flutter renders UIs through a multi-stage pipeline:
+  </p>
+  <ol>
+    <li><strong>Animation/Build Phase:</strong> The framework inspects modified state, evaluates widget trees, and produces corresponding Element and RenderObject updates.</li>
+    <li><strong>Layout Phase:</strong> Dimensions and positioning constraints are passed down from parent to child, and sizes are passed back up.</li>
+    <li><strong>Paint Phase:</strong> Visual pixels and layers are recorded onto display canvases using Skia or the Impeller rendering engine.</li>
+    <li><strong>Compositing Phase:</strong> Separate rendering layers are merged into final GPU instructions.</li>
+  </ol>
+  <p>
+    Bottlenecks typically occur when unnecessary work is performed during the <em>Build</em> or <em>Paint</em> phases.
+  </p>
+
+  <div class="callout">
+    <strong>Key Rule:</strong> Expensive computational work—such as parsing large JSON payloads, calculating complex arithmetic puzzles, or decoding raw cryptography keys—must never execute on the main UI thread.
+  </div>
+
+  <h2>2. Minimizing Unnecessary Widget Rebuilds</h2>
+  <p>
+    One of the most frequent causes of jank in Flutter applications is over-scoping widget rebuilds. Calling <code>setState()</code> high up in a large widget tree forces Flutter to reconstruct every child widget beneath it.
+  </p>
+  <h3>Best Practices for Surgical Rebuilding:</h3>
+  <ul>
+    <li><strong>Isolate State with Targeted State Management:</strong> Use granular reactive state providers such as <code>BlocBuilder</code>, <code>ValueListenableBuilder</code>, or Riverpod selectors. Only the exact text widget or button that relies on the changed value should rebuild.</li>
+    <li><strong>Leverage <code>const</code> Constructors Heavily:</strong> Whenever a widget does not depend on dynamic runtime parameters, prefix it with <code>const</code>. Flutter caches <code>const</code> widget instances and skips them completely during rebuild passes.</li>
+    <li><strong>Decompose Monolithic Widgets:</strong> Break huge build methods into small, independent widget classes. Sub-widgets with their own lifecycle prevent cascades of rebuild instructions.</li>
+  </ul>
+
+  <div class="ad-slot-container">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-2862340185854650"
+         data-ad-slot="1698295242"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <h2>3. Isolating Heavy Painting with <code>RepaintBoundary</code></h2>
+  <p>
+    When a single element on screen animates (for example, a progress spinner or a timer in a Sudoku game), Flutter may unnecessarily repaint the entire surrounding screen canvas.
+  </p>
+  <p>
+    Wrapping frequently animated widgets in a <code>RepaintBoundary</code> creates an independent rendering layer. This ensures that when the inner animation repaints, Flutter reuses the cached raster snapshot of the outer background, saving valuable GPU cycles:
+  </p>
+  <pre><code>// Preventing background repaint during timer tick
+RepaintBoundary(
+  child: GameTimerWidget(elapsedSeconds: seconds),
+)</code></pre>
+
+  <h2>4. Offloading Heavy Computation to Dart Isolates</h2>
+  <p>
+    Because Dart is single-threaded by default, executing a CPU-intensive task (such as evaluating Sudoku board solutions or generating procedural math graphs) on the main event loop will immediately block frame dispatch.
+  </p>
+  <p>
+    We offload algorithmic tasks to background Dart isolates using <code>compute()</code> or <code>Isolate.run()</code>:
+  </p>
+  <pre><code>// Offload algorithmic calculation without dropping UI frames
+final solvedBoard = await Isolate.run(() {
+  return SudokuEngine.solve(puzzleGrid);
+});</code></pre>
+
+  <h2>5. Image Optimization and Caching Strategies</h2>
+  <p>
+    Unoptimized asset images are the number one cause of sudden Out-Of-Memory (OOM) crashes on budget Android devices.
+  </p>
+  <ul>
+    <li><strong>Specify <code>cacheWidth</code> and <code>cacheHeight</code>:</strong> When displaying high-resolution images in thumbnails, decode them at display resolution rather than full camera resolution:
+      <code>Image.asset('assets/icon.png', cacheWidth: 120)</code>.
+    </li>
+    <li><strong>Use Vector Graphics (SVG):</strong> For crisp icons across varying pixel densities, vector assets provide resolution independence with minimal memory footprint.</li>
+  </ul>
+
+  <h2>6. Benchmarking with Flutter DevTools</h2>
+  <p>
+    Never guess where performance issues reside. In our development workflow at Alisa Tech Studio, every release build undergoes profiling with <strong>Flutter DevTools</strong>:
+  </p>
+  <ul>
+    <li><strong>CPU Profiler:</strong> Identifies methods consuming high processing time.</li>
+    <li><strong>Performance Timeline:</strong> Visualizes frame build times against the 8.3ms and 16.6ms threshold lines.</li>
+    <li><strong>Memory Profiler:</strong> Tracks object allocations and validates that stream subscriptions and controllers are properly disposed of in <code>dispose()</code>.</li>
+  </ul>
+
+  <h2>Summary</h2>
+  <p>
+    Building silky 120 FPS mobile applications requires a disciplined approach to widget composition, state scoping, memory hygiene, and asynchronous execution. By applying these patterns systematically, our applications at Alisa Tech Studio deliver instant responsiveness that users love.
+  </p>
+
+  <footer>
+    &copy; 2026 Alisa Tech Studio. All rights reserved. &bull;
+    <a href="../index.html">Home</a> &bull;
+    <a href="../about.html">About</a> &bull;
+    <a href="../articles.html">Articles</a> &bull;
+    <a href="../contact.html">Contact</a> &bull;
+    <a href="../privacy_policy.html">Privacy Policy</a>
+  </footer>
+</div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie Preferences">
+  <div class="cookie-banner-content">
+    <div class="cookie-banner-text">
+      <strong>🍪 Cookie Policy &amp; Privacy Choices</strong>
+      <p>We use cookies and device identifiers to enhance navigation, analyze site traffic, and deliver personalized ads through Google AdSense. Read our <a href="../privacy_policy.html">Privacy Policy</a> to learn more.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-secondary">Decline Optional</button>
+      <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-primary">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var banner = document.getElementById('cookieConsentBanner');
+    if (!banner) return;
+    var consent = localStorage.getItem('ats_cookie_consent');
+    if (!consent) {
+      banner.style.display = 'block';
+    }
+    var acceptBtn = document.getElementById('acceptCookiesBtn');
+    var rejectBtn = document.getElementById('rejectCookiesBtn');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+      });
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'declined');
+        banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>

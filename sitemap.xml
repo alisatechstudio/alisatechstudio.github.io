@@ -10,18 +10,67 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    <!-- About Us Page -->
+    <url>
+        <loc>https://alisatechstudio.online/about.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <!-- Articles & Knowledge Hub -->
+    <url>
+        <loc>https://alisatechstudio.online/articles.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <!-- Technical Article: Flutter Mobile Performance -->
+    <url>
+        <loc>https://alisatechstudio.online/articles/flutter-mobile-app-performance.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Puzzle Strategy Article: Classic Sudoku Mastery -->
+    <url>
+        <loc>https://alisatechstudio.online/articles/sudoku-mastery-guide.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Language Article: Accelerated Language Learning -->
+    <url>
+        <loc>https://alisatechstudio.online/articles/effective-language-learning.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Security Article: Mobile Privacy & Security -->
+    <url>
+        <loc>https://alisatechstudio.online/articles/mobile-app-security-privacy.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Contact Page -->
+    <url>
+        <loc>https://alisatechstudio.online/contact.html</loc>
+        <lastmod>2026-10-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <!-- Privacy Policy -->
     <url>
         <loc>https://alisatechstudio.online/privacy_policy.html</loc>
         <lastmod>2026-10-07</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <!-- Terms of Service -->
     <url>
         <loc>https://alisatechstudio.online/terms.html</loc>
         <lastmod>2026-10-07</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 </urlset>

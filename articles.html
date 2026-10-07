@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-adsense-account" content="ca-pub-2862340185854650">
+
+<!-- Primary SEO Meta Tags -->
+<title>Tech Insights &amp; App Guides | Alisa Tech Studio</title>
+<meta name="title" content="Tech Insights &amp; App Guides | Alisa Tech Studio">
+<meta name="description" content="Explore in-depth technical guides, mobile app development tutorials, cognitive game strategies, and language learning frameworks from Alisa Tech Studio.">
+<meta name="keywords" content="Flutter app tutorials, mobile development guides, Sudoku strategy guide, learn German guide, mobile app security, Alisa Tech Studio articles">
+<meta name="author" content="Alisa Tech Studio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://alisatechstudio.online/articles.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alisatechstudio.online/articles.html">
+<meta property="og:title" content="Tech Insights &amp; App Guides | Alisa Tech Studio">
+<meta property="og:description" content="Comprehensive engineering articles, mobile tutorials, and cognitive strategy guides written by Alisa Tech Studio developers.">
+<meta property="og:site_name" content="Alisa Tech Studio">
+<meta property="og:image" content="https://alisatechstudio.online/assets/icons/google-play-badge.png">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) & Google Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': currentConsent,
+    'ad_user_data': currentConsent,
+    'ad_personalization': currentConsent,
+    'analytics_storage': currentConsent
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-4DVT6RT8QP');
+</script>
+
+<style>
+  :root {
+    --ink: #1a1d23;
+    --muted: #5b6270;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --line: #e6e8ec;
+    --bg-soft: #f7f8fa;
+    --bg-callout: #eff6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    background: #fff;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+  }
+  .back-nav {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .back-nav a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .back-nav a:hover {
+    text-decoration: underline;
+  }
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+  }
+  header.hero .brand {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .lead {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .article-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent);
+  }
+  .article-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .article-tag {
+    background: var(--bg-callout);
+    color: var(--accent);
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .article-card h2 {
+    font-size: 21px;
+    margin: 0 0 10px;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .article-card p {
+    font-size: 15px;
+    color: #4b5563;
+    margin: 0 0 14px;
+    line-height: 1.6;
+  }
+  .read-more {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .ad-slot-container {
+    margin: 28px 0;
+    padding: 14px;
+    background: var(--bg-soft);
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    text-align: center;
+    min-height: 90px;
+  }
+  .ad-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    display: block;
+  }
+  footer {
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+    padding-top: 20px;
+    color: var(--muted);
+    font-size: 13.5px;
+    text-align: center;
+  }
+  footer a {
+    color: var(--accent);
+    margin: 0 4px;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Cookie Banner */
+  .cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 16px 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+  }
+  .cookie-banner-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cookie-banner-text {
+    flex: 1 1 500px;
+    font-size: 13.5px;
+  }
+  .cookie-banner-text strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cookie-banner-text p {
+    color: #cbd5e1;
+    margin: 0;
+  }
+  .cookie-banner-text a {
+    color: #818cf8;
+    text-decoration: underline;
+  }
+  .cookie-banner-actions {
+    display: flex;
+    gap: 10px;
+  }
+  .cookie-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+  .cookie-btn-primary {
+    background: #4f46e5;
+    color: white;
+  }
+  .cookie-btn-secondary {
+    background: #334155;
+    color: #f1f5f9;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="back-nav">
+    <a href="index.html">&larr; Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="privacy_policy.html">Privacy Policy</a>
+  </div>
+
+  <header class="hero">
+    <div class="brand">Alisa Tech Studio Knowledge Hub</div>
+    <h1>Engineering Insights &amp; Comprehensive Guides</h1>
+    <div class="lead">Original, in-depth technical guides, software architecture insights, and user tutorials written directly by our application developers.</div>
+  </header>
+
+  <div class="articles-list">
+    <!-- Article 1: Flutter Performance -->
+    <a href="articles/flutter-mobile-app-performance.html" class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Software Engineering</span>
+        <span>October 2026 &bull; 8 min read</span>
+      </div>
+      <h2>Mastering Flutter Performance: How We Build Silky 120 FPS Mobile Apps</h2>
+      <p>Discover the exact architectural techniques, widget rebuilding optimizations, isolate concurrency methods, and DevTools profiling benchmarks we utilize at Alisa Tech Studio to maintain peak rendering speeds on mobile hardware.</p>
+      <span class="read-more">Read Full Technical Guide &rarr;</span>
+    </a>
+
+    <!-- Article 2: Sudoku Mastery -->
+    <a href="articles/sudoku-mastery-guide.html" class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Brain Training &amp; Logic</span>
+        <span>October 2026 &bull; 7 min read</span>
+      </div>
+      <h2>The Complete Classic Sudoku Strategy Guide: From Beginner to Expert Techniques</h2>
+      <p>A comprehensive walkthrough of solving strategies for Sudoku enthusiasts, exploring Naked Singles, Hidden Pairs, X-Wing formations, Box-Line Reductions, and the cognitive neuroscience behind daily number puzzles.</p>
+      <span class="read-more">Read Full Puzzle Guide &rarr;</span>
+    </a>
+
+    <!-- Article 3: Language Learning -->
+    <a href="articles/effective-language-learning.html" class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Educational Science</span>
+        <span>October 2026 &bull; 7 min read</span>
+      </div>
+      <h2>Accelerated Language Acquisition: A Practical Blueprint to Master German &amp; Italian</h2>
+      <p>How our language learning apps combine Spaced Repetition Systems (SRS), CEFR A1-A2 syllabus progression, and comprehensible input to help learners attain conversational confidence faster.</p>
+      <span class="read-more">Read Full Language Framework &rarr;</span>
+    </a>
+
+    <!-- Article 4: Mobile App Privacy & Security -->
+    <a href="articles/mobile-app-security-privacy.html" class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Security &amp; Privacy</span>
+        <span>October 2026 &bull; 6 min read</span>
+      </div>
+      <h2>Modern Mobile App Security &amp; Privacy: Apple ATT, Android Permissions &amp; Data Ethics</h2>
+      <p>An actionable guide exploring how mobile developers can navigate Apple's App Tracking Transparency, Android privacy sandboxes, and modern encryption standards while delivering engaging user experiences.</p>
+      <span class="read-more">Read Full Privacy Guide &rarr;</span>
+    </a>
+  </div>
+
+  <div class="ad-slot-container">
+    <span class="ad-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-2862340185854650"
+         data-ad-slot="1698295242"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <footer>
+    &copy; 2026 Alisa Tech Studio. All rights reserved. &bull;
+    <a href="index.html">Home</a> &bull;
+    <a href="about.html">About</a> &bull;
+    <a href="articles.html">Articles</a> &bull;
+    <a href="contact.html">Contact</a> &bull;
+    <a href="privacy_policy.html">Privacy Policy</a> &bull;
+    <a href="terms.html">Terms</a>
+  </footer>
+</div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie Preferences">
+  <div class="cookie-banner-content">
+    <div class="cookie-banner-text">
+      <strong>🍪 Cookie Policy &amp; Privacy Choices</strong>
+      <p>We use cookies and device identifiers to enhance navigation, analyze site traffic, and deliver personalized ads through Google AdSense. Read our <a href="privacy_policy.html">Privacy Policy</a> to learn more.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-secondary">Decline Optional</button>
+      <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-primary">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var banner = document.getElementById('cookieConsentBanner');
+    if (!banner) return;
+    var consent = localStorage.getItem('ats_cookie_consent');
+    if (!consent) {
+      banner.style.display = 'block';
+    }
+    var acceptBtn = document.getElementById('acceptCookiesBtn');
+    var rejectBtn = document.getElementById('rejectCookiesBtn');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+      });
+    }
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('ats_cookie_consent', 'declined');
+        banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>
