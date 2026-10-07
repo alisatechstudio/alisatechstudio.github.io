@@ -19,13 +19,22 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
      crossorigin="anonymous"></script>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) & Google Consent Mode v2 (AdSense Compliance) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  // Consent Mode v2 configuration
+  var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': currentConsent,
+    'ad_user_data': currentConsent,
+    'ad_personalization': currentConsent,
+    'analytics_storage': currentConsent
+  });
+
+  gtag('js', new Date());
   gtag('config', 'G-4DVT6RT8QP');
 </script>
 
@@ -376,9 +385,11 @@
     You have complete control over how advertising cookies and data are used:
   </p>
   <ul>
+    <li><strong>Google Advertising Policies &amp; Data Usage:</strong> To learn how Google collects and processes data across publisher sites, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>.</li>
     <li><strong>Google Ad Settings:</strong> You can opt out of personalized Google advertisements anytime by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
-    <li><strong>Network Advertising Initiative (NAI):</strong> Opt out of third-party vendor advertising cookies at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">AboutAds.info Choices</a>.</li>
+    <li><strong>Network Advertising Initiative (NAI):</strong> Opt out of third-party vendor advertising cookies at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">AboutAds.info Choices</a> or <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer">Network Advertising Initiative Opt-Out</a>.</li>
     <li><strong>European Interactive Digital Advertising Alliance (EDAA):</strong> EEA/UK users can manage advertising preferences via <a href="https://www.youronlinechoices.eu/" target="_blank" rel="noopener noreferrer">Your Online Choices</a>.</li>
+    <li><strong>Digital Advertising Alliance (DAA):</strong> Manage participation in interest-based advertising via <a href="https://youradchoices.com/" target="_blank" rel="noopener noreferrer">YourAdChoices</a>.</li>
     <li><strong>Browser Controls:</strong> You can configure your browser to block, delete, or alert you before accepting cookies. Note that disabling essential cookies may affect website functionality.</li>
   </ul>
 
@@ -516,12 +527,28 @@
       acceptBtn.addEventListener('click', function() {
         localStorage.setItem('ats_cookie_consent', 'accepted');
         banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
       });
     }
     if (rejectBtn) {
       rejectBtn.addEventListener('click', function() {
         localStorage.setItem('ats_cookie_consent', 'declined');
         banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
       });
     }
   })();

@@ -128,11 +128,21 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
         crossorigin="anonymous"></script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) & Google Consent Mode v2 (AdSense Compliance) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        
+        // Consent Mode v2 configuration
+        var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+            'ad_storage': currentConsent,
+            'ad_user_data': currentConsent,
+            'ad_personalization': currentConsent,
+            'analytics_storage': currentConsent
+        });
+
         gtag('js', new Date());
         gtag('config', 'G-4DVT6RT8QP');
     </script>
@@ -2093,12 +2103,28 @@
                 acceptBtn.addEventListener('click', function() {
                     localStorage.setItem('ats_cookie_consent', 'accepted');
                     banner.style.display = 'none';
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'ad_storage': 'granted',
+                            'ad_user_data': 'granted',
+                            'ad_personalization': 'granted',
+                            'analytics_storage': 'granted'
+                        });
+                    }
                 });
             }
             if (rejectBtn) {
                 rejectBtn.addEventListener('click', function() {
                     localStorage.setItem('ats_cookie_consent', 'declined');
                     banner.style.display = 'none';
+                    if (typeof gtag === 'function') {
+                        gtag('consent', 'update', {
+                            'ad_storage': 'denied',
+                            'ad_user_data': 'denied',
+                            'ad_personalization': 'denied',
+                            'analytics_storage': 'denied'
+                        });
+                    }
                 });
             }
         })();

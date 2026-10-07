@@ -19,13 +19,22 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
      crossorigin="anonymous"></script>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) & Google Consent Mode v2 (AdSense Compliance) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
+  // Consent Mode v2 configuration
+  var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': currentConsent,
+    'ad_user_data': currentConsent,
+    'ad_personalization': currentConsent,
+    'analytics_storage': currentConsent
+  });
+
+  gtag('js', new Date());
   gtag('config', 'G-4DVT6RT8QP');
 </script>
 
@@ -248,9 +257,20 @@
   <p>Certain apps may offer optional digital items, game features, or subscriptions. All purchases made through mobile platforms (such as the Google Play Store or Apple App Store) are processed directly by and subject to the terms and billing policies of the respective store platform.</p>
   <p>Payments, subscription renewals, cancellations, and refund requests are governed by the applicable store platform's billing policies.</p>
 
-  <h2>4. Advertisements &amp; Third-Party Services</h2>
-  <p>Our website and mobile applications may display digital advertisements served by verified advertising networks, including Google AdSense and Google AdMob. These services may collect technical diagnostic and non-personally identifiable usage information in accordance with our <a href="privacy_policy.html">Privacy Policy</a>.</p>
-  <p>We do not endorse and are not responsible for third-party products, services, or websites linked within advertisements. Interacting with third-party advertisers is solely at your own discretion.</p>
+  <h2>4. Advertisements &amp; Third-Party Services (Google AdSense Compliance)</h2>
+  <p>Our website and mobile applications display digital advertisements provided through verified ad networks, primarily <strong>Google AdSense</strong> (web) and <strong>Google AdMob</strong> (mobile). We adhere strictly to the Google AdSense Program Policies and publisher terms.</p>
+
+  <h3>4.1 User Ad Interaction &amp; Prohibition of Invalid Traffic</h3>
+  <p>To ensure compliance with Google AdSense and maintain ad network integrity, you agree to the following strict conditions:</p>
+  <ul>
+    <li><strong>No Artificial or Invalid Clicks:</strong> You must not artificially generate clicks, impressions, or queries on any advertisements, whether manually, through automated software, bots, proxies, click rings, or browser extensions.</li>
+    <li><strong>No Deceptive Interaction:</strong> You may not solicit, encourage, or incentivize others to click advertisements displayed on our site or within our applications.</li>
+    <li><strong>No Ad Code Tampering:</strong> You may not modify, obscure, resize, or alter any advertisement units, ad labels, or Google ad scripts.</li>
+    <li><strong>Organic Engagement Only:</strong> Clicks and interactions on advertisements must be genuine, voluntary, and result from legitimate user interest in the advertiser's offer.</li>
+  </ul>
+
+  <h3>4.2 Third-Party Advertisers &amp; External Links</h3>
+  <p>Advertisements displayed on our services may lead to external third-party websites and products. We do not endorse, guarantee, or assume responsibility for the content, privacy policies, products, or practices of any third-party advertisers. All transactions and interactions with advertisers are strictly between you and the respective third party.</p>
 
   <div class="ad-slot-container">
     <span class="ad-label">Advertisement</span>
@@ -321,12 +341,28 @@
       acceptBtn.addEventListener('click', function() {
         localStorage.setItem('ats_cookie_consent', 'accepted');
         banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
       });
     }
     if (rejectBtn) {
       rejectBtn.addEventListener('click', function() {
         localStorage.setItem('ats_cookie_consent', 'declined');
         banner.style.display = 'none';
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+        }
       });
     }
   })();
