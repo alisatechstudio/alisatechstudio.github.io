@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://alisatechstudio.online/</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/about.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/articles.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/articles/flutter-mobile-app-performance.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/articles/sudoku-mastery-guide.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/articles/effective-language-learning.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/articles/mobile-app-security-privacy.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/contact.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/privacy_policy.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alisatechstudio.online/terms.html</loc>
-        <lastmod>2026-10-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
     </url>
 </urlset>
