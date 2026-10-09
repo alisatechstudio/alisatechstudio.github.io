@@ -2,5 +2,14 @@
 User-agent: *
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 # Sitemap Location
 Sitemap: https://alisatechstudio.online/sitemap.xml
