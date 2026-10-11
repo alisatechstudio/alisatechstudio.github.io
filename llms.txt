@@ -1,0 +1,31 @@
+# Alisa Tech Studio
+
+> Alisa Tech Studio builds innovative, high-performance Flutter mobile applications, modern web software, and custom digital experiences for iOS, Android, and the web.
+
+Alisa Tech Studio specializes in cross-platform mobile engineering, cognitive puzzle games, educational language learning tools, and privacy-first digital applications. We craft intuitive user interfaces, architect buttery 120 FPS rendering pipelines, and partner with startups and organizations to build custom software.
+
+## Core Pages
+
+- [Home](https://alisatechstudio.online/): Main portal showcasing our software portfolio, development capabilities, Flutter expertise, and company overview.
+- [About Us](https://alisatechstudio.online/about.html): Our engineering philosophy, software architecture standards, and development team background.
+- [Contact](https://alisatechstudio.online/contact.html): Inquiries, custom software partnerships, support desk, and user feedback channels (alisatechstudio@gmail.com).
+- [Knowledge Hub & Articles](https://alisatechstudio.online/articles.html): In-depth engineering tutorials, technical guides, puzzle strategies, and language learning research.
+
+## Engineering & Knowledge Guides
+
+- [Mastering Flutter Performance](https://alisatechstudio.online/articles/flutter-mobile-app-performance.html): In-depth guide detailing widget rebuilding optimizations, isolate concurrency, memory management, and profiling tools for achieving 120 FPS on iOS and Android.
+- [Complete Sudoku Strategy Guide](https://alisatechstudio.online/articles/sudoku-mastery-guide.html): Comprehensive cognitive guide covering beginner to advanced Sudoku techniques (Naked Singles, Hidden Pairs, X-Wing, Box-Line Reductions) and brain health benefits.
+- [Accelerated Language Acquisition Framework](https://alisatechstudio.online/articles/effective-language-learning.html): Educational blueprint exploring Spaced Repetition Systems (SRS), comprehensible input, and CEFR progression for mastering German and Italian.
+- [Mobile App Security & Privacy Guide](https://alisatechstudio.online/articles/mobile-app-security-privacy.html): Actionable handbook on Apple App Tracking Transparency (ATT), Android Privacy Sandbox, secure storage, and ethical user tracking.
+
+## Legal & Compliance
+
+- [Privacy Policy](https://alisatechstudio.online/privacy_policy.html): Complete privacy disclosures, data retention rules, Google AdSense & Analytics compliance, and user rights under GDPR and CCPA.
+- [Terms of Service](https://alisatechstudio.online/terms.html): Terms and conditions governing the use of our applications, website, and services.
+
+## Developer & Social Links
+
+- Official Website: https://alisatechstudio.online
+- Google Play Store: https://play.google.com/store/apps/developer?id=Alisa+Tech+Studio
+- GitHub Organization: https://github.com/alisatechstudio
+- Email: alisatechstudio@gmail.com
