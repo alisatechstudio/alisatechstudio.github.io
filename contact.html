@@ -29,9 +29,30 @@
 <meta property="og:site_name" content="Alisa Tech Studio">
 <meta property="og:image" content="https://alisatechstudio.online/assets/icons/alisa-brand-logo.png">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650"
-     crossorigin="anonymous"></script>
+<!-- Google AdSense (Lazy-loaded on user interaction for peak performance & 100 Best Practices) -->
+<script>
+  (function() {
+    var adsLoaded = false;
+    function loadAdSense() {
+      if (adsLoaded) return;
+      adsLoaded = true;
+      ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(e) {
+        window.removeEventListener(e, loadAdSense, { passive: true });
+      });
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2862340185854650';
+      script.crossOrigin = 'anonymous';
+      document.head.appendChild(script);
+    }
+    ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'].forEach(function(e) {
+      window.addEventListener(e, loadAdSense, { passive: true, once: true });
+    });
+    window.addEventListener('load', function() {
+      setTimeout(loadAdSense, 6000);
+    });
+  })();
+</script>
 
 <!-- Google tag (gtag.js) & Google Consent Mode v2 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
