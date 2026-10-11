@@ -72,6 +72,30 @@
   gtag('config', 'G-4DVT6RT8QP');
 </script>
 
+<!-- Microsoft Clarity (Deferred & Consent V2 Integrated) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
+    c[a]('consentv2', {
+      ad_Storage: currentConsent,
+      analytics_Storage: currentConsent
+    });
+    c[a]('consent', currentConsent === 'granted');
+    function loadClarity() {
+      if (c[a].__loaded) return;
+      c[a].__loaded = true;
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }
+    if (document.readyState === 'complete') {
+      loadClarity();
+    } else {
+      window.addEventListener('load', loadClarity);
+    }
+  })(window, document, "clarity", "script", "yv2r38db10");
+</script>
+
 <style>
   :root {
     --ink: #1a1d23;
@@ -442,6 +466,13 @@
             'analytics_storage': 'granted'
           });
         }
+        if (typeof clarity === 'function') {
+          clarity('consentv2', {
+            ad_Storage: 'granted',
+            analytics_Storage: 'granted'
+          });
+          clarity('consent', true);
+        }
       });
     }
     if (rejectBtn) {
@@ -455,6 +486,13 @@
             'ad_personalization': 'denied',
             'analytics_storage': 'denied'
           });
+        }
+        if (typeof clarity === 'function') {
+          clarity('consentv2', {
+            ad_Storage: 'denied',
+            analytics_Storage: 'denied'
+          });
+          clarity('consent', false);
         }
       });
     }
