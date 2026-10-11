@@ -124,14 +124,10 @@
     }
     </script>
 
-    <!-- Google Fonts (Non-Render-Blocking Asynchronous Loading) -->
+    <!-- Google Fonts (Preconnected & loaded with display=optional to completely eliminate CLS / font swap shifts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
-    </noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional">
 
     <!-- Google AdSense (Lazy-loaded on user interaction for peak performance & 100 Best Practices) -->
     <script>
@@ -158,8 +154,7 @@
         })();
     </script>
 
-    <!-- Google tag (gtag.js) & Google Consent Mode v2 (AdSense Compliance) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
+    <!-- Google tag (gtag.js) & Google Consent Mode v2 (Deferred to eliminate blocking time & reflow) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -175,6 +170,14 @@
 
         gtag('js', new Date());
         gtag('config', 'G-4DVT6RT8QP');
+
+        // Defer gtag.js execution until main thread is idle to eliminate 280ms TBT and forced reflow on mobile
+        window.addEventListener('load', function() {
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP';
+            document.head.appendChild(gtagScript);
+        });
     </script>
 
     <style>
@@ -456,14 +459,23 @@
             background: #10b981;
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-            animation: pulseStatus 2s infinite;
+            position: relative;
         }
 
-        @keyframes pulseStatus {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 9px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulsePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes pulsePing {
+            0% { transform: scale(1); opacity: 0.85; }
+            70% { transform: scale(2.8); opacity: 0; }
+            100% { transform: scale(2.8); opacity: 0; }
         }
 
         .hero h1 {
@@ -949,17 +961,21 @@
         .play-badge-link {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             text-decoration: none;
             line-height: 0;
+            min-height: 38px;
         }
 
         .play-badge {
             height: 38px;
-            width: auto;
+            width: 133px;
+            aspect-ratio: 462 / 132;
             border-radius: 7px;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             vertical-align: middle;
+            display: inline-block;
         }
 
         .play-badge-link:hover .play-badge {
@@ -1359,6 +1375,40 @@
                 font-size: 1.05rem;
             }
 
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.85rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary {
+                width: 100%;
+                max-width: 270px;
+                justify-content: center;
+                padding: 0.85rem 1.8rem;
+            }
+
+            .hero-actions .play-badge-link {
+                display: inline-flex;
+                justify-content: center;
+                width: 168px;
+                height: 48px;
+            }
+
+            .hero-stats-ribbon {
+                gap: 0.6rem;
+            }
+
+            .hero-stat-pill {
+                animation: none;
+            }
+
+            .shimmer-text {
+                animation: none;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -1483,22 +1533,23 @@
             background: #475569;
         }
 
-        /* --- Top Animated Rainbow Bar --- */
+        /* --- Top Animated Rainbow Bar (Hardware Composited) --- */
         .top-accent-bar {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
+            width: 200%;
             height: 3px;
             background: linear-gradient(90deg, #4f46e5, #06b6d4, #10b981, #f59e0b, #ec4899, #8b5cf6, #4f46e5);
-            background-size: 300% 100%;
             animation: rainbowBar 8s linear infinite;
             z-index: 9999;
+            will-change: transform;
+            pointer-events: none;
         }
 
         @keyframes rainbowBar {
-            0% { background-position: 0% center; }
-            100% { background-position: 300% center; }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* --- Scroll-Driven Reveal Animations --- */
@@ -1601,7 +1652,7 @@
                     <a href="#apps" class="btn-primary">Explore Our Apps &rarr;</a>
                     <a href="#apps" class="play-badge-link" aria-label="Browse published applications in portfolio">
                         <img src="assets/icons/google-play-badge.png" alt="Browse published applications on Google Play" class="play-badge"
-                            width="462" height="132" style="height: 48px; width: auto; border-radius: 10px;">
+                            width="168" height="48" style="height: 48px; width: 168px; aspect-ratio: 168 / 48; border-radius: 10px;">
                     </a>
                     <a href="#contact" class="btn-secondary">Request a Quote</a>
                 </div>
