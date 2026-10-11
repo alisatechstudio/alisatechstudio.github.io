@@ -452,8 +452,8 @@
             font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: #94a3b8;
-            font-weight: 600;
+            color: #334155;
+            font-weight: 700;
             margin-bottom: 0.8rem;
         }
 
@@ -1123,10 +1123,30 @@
             font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #94a3b8;
-            font-weight: 600;
+            color: #334155;
+            font-weight: 700;
             margin-bottom: 0.6rem;
             display: block;
+        }
+
+        /* Accessibility: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 9999;
+            transition: top 0.2s ease;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
         }
 
         /* --- Cookie Consent Banner --- */
@@ -1238,6 +1258,12 @@
         </div>
     </header>
 
+    <!-- Skip Link for Keyboard Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Content Landmark -->
+    <main id="main-content">
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1250,8 +1276,8 @@
                     scalable web software, and bespoke digital experiences crafted for business growth.</p>
                 <div class="hero-actions">
                     <a href="#apps" class="btn-primary">Explore Our Apps &rarr;</a>
-                    <a href="#apps" class="play-badge-link" aria-label="Available on Google Play">
-                        <img src="assets/icons/google-play-badge.png" alt="Get it on Google Play" class="play-badge"
+                    <a href="#apps" class="play-badge-link" aria-label="Browse published applications in portfolio">
+                        <img src="assets/icons/google-play-badge.png" alt="Browse published applications on Google Play" class="play-badge"
                             style="height: 48px; border-radius: 10px;">
                     </a>
                     <a href="#contact" class="btn-secondary">Request a Quote</a>
@@ -1397,8 +1423,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.alisa_vpn"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Alisa VPN on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Alisa VPN on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1414,12 +1440,12 @@
                         </div>
                     </div>
                     <p>Comprehensive Bangladeshi and international news portal aggregator featuring curated channels,
-                        breaking push alerts, and smooth in-app reading.</p>
+                       breaking push alerts, and smooth in-app reading.</p>
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.news_all_in_one"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download News All in One on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download News All in One on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1439,8 +1465,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.arrow_escape"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Arrow Escape on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Arrow Escape on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1460,8 +1486,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.fruit_crush_saga"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Fruit Crush Saga on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Fruit Crush Saga on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1481,8 +1507,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.color_sort"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Color Sort on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Color Sort on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1502,8 +1528,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatecstudio.lodu_boss"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Lodu Boss on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Lodu Boss on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1523,8 +1549,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.sudoku"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Suduko Classic on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Suduko Classic on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1544,8 +1570,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.math_puzzle"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Math Puzzles on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Math Puzzles on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1565,8 +1591,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.german_a1"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Learn German on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Learn German on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1586,8 +1612,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.italian_a1"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Learn Italian on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Learn Italian on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1607,8 +1633,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.live_sports_tv"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Sports TV Live on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Sports TV Live on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1629,8 +1655,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.personal_finance_tracker"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download Personal Finance on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download Personal Finance on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1650,8 +1676,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.qr_scanner"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download QR and Barcode Scanner on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download QR and Barcode Scanner on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1671,8 +1697,8 @@
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.to_buy"
                             target="_blank" rel="noopener noreferrer" class="play-badge-link"
-                            aria-label="Get it on Google Play"><img src="assets/icons/google-play-badge.png"
-                                alt="Get it on Google Play" class="play-badge"></a>
+                            aria-label="Download To Buy Shopping List on Google Play"><img src="assets/icons/google-play-badge.png"
+                                alt="Download To Buy Shopping List on Google Play" class="play-badge"></a>
                     </div>
                 </div>
 
@@ -1691,8 +1717,8 @@
                         end-to-end communication and smooth chat UI.</p>
                     <div class="app-footer">
                         <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.talk" target="_blank"
-                            rel="noopener noreferrer" class="play-badge-link" aria-label="Get it on Google Play"><img
-                                src="assets/icons/google-play-badge.png" alt="Get it on Google Play"
+                            rel="noopener noreferrer" class="play-badge-link" aria-label="Download Talk Messenger on Google Play"><img
+                                src="assets/icons/google-play-badge.png" alt="Download Talk Messenger on Google Play"
                                 class="play-badge"></a>
                     </div>
                 </div>
@@ -2024,6 +2050,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
