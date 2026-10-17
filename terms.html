@@ -48,22 +48,16 @@
 </script>
 
 <!-- Google Consent Mode v2 & GDPR Consent Settings -->
+<script>
+  window.GDPR_CONSENT_CONFIG = {
+    privacyUrl: 'privacy_policy.html',
+    gaMeasurementId: 'G-4DVT6RT8QP'
+  };
+</script>
 <script src="js/gdpr-consent.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4DVT6RT8QP"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-
-  // Consent Mode v2 configuration
-  var currentConsent = localStorage.getItem('ats_cookie_consent') === 'accepted' ? 'granted' : 'denied';
-  gtag('consent', 'default', {
-    'ad_storage': currentConsent,
-    'ad_user_data': currentConsent,
-    'ad_personalization': currentConsent,
-    'analytics_storage': currentConsent
-  });
-
   gtag('js', new Date());
   gtag('config', 'G-4DVT6RT8QP');
 </script>
@@ -344,75 +338,6 @@
         <a href="#cookie-settings" data-open-cookie-settings>Cookie Settings</a>
   </footer>
 </div>
-
-<!-- Cookie Consent Banner -->
-<div id="cookieConsentBanner" class="cookie-banner" role="region" aria-label="Cookie Preferences">
-  <div class="cookie-banner-content">
-    <div class="cookie-banner-text">
-      <strong>🍪 Cookie Policy &amp; Privacy Choices</strong>
-      <p>We use cookies and device identifiers to enhance navigation, analyze site traffic, and deliver personalized ads through Google AdSense. Read our <a href="privacy_policy.html">Privacy Policy</a> to learn more.</p>
-    </div>
-    <div class="cookie-banner-actions">
-      <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-secondary">Decline Optional</button>
-      <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-primary">Accept All</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  (function() {
-    var banner = document.getElementById('cookieConsentBanner');
-    if (!banner) return;
-    var consent = localStorage.getItem('ats_cookie_consent');
-    if (!consent) {
-      banner.style.display = 'block';
-    }
-    var acceptBtn = document.getElementById('acceptCookiesBtn');
-    var rejectBtn = document.getElementById('rejectCookiesBtn');
-    if (acceptBtn) {
-      acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('ats_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-        if (typeof gtag === 'function') {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
-        }
-        if (typeof clarity === 'function') {
-          clarity('consentv2', {
-            ad_Storage: 'granted',
-            analytics_Storage: 'granted'
-          });
-          clarity('consent', true);
-        }
-      });
-    }
-    if (rejectBtn) {
-      rejectBtn.addEventListener('click', function() {
-        localStorage.setItem('ats_cookie_consent', 'declined');
-        banner.style.display = 'none';
-        if (typeof gtag === 'function') {
-          gtag('consent', 'update', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-          });
-        }
-        if (typeof clarity === 'function') {
-          clarity('consentv2', {
-            ad_Storage: 'denied',
-            analytics_Storage: 'denied'
-          });
-          clarity('consent', false);
-        }
-      });
-    }
-  })();
-</script>
 
 </body>
 </html>
