@@ -93,6 +93,75 @@
   })(window, document, "clarity", "script", "yv2r38db10");
 </script>
 
+<!-- Schema.org Rich Structured Data (ContactPage, BreadcrumbList, FAQPage for PAA & AI Search) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://alisatechstudio.online/contact.html#contactpage",
+      "url": "https://alisatechstudio.online/contact.html",
+      "name": "Contact Support & Inquiries | Alisa Tech Studio",
+      "description": "Get in touch with Alisa Tech Studio for app support, custom Flutter mobile software development, partnerships, and developer inquiries.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://alisatechstudio.online/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://alisatechstudio.online/contact.html"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "@id": "https://alisatechstudio.online/#organization",
+        "name": "Alisa Tech Studio",
+        "url": "https://alisatechstudio.online/",
+        "logo": "https://alisatechstudio.online/assets/icons/alisa-brand-logo.png",
+        "email": "alisatechstudio@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Naria",
+          "addressRegion": "Shariatpur",
+          "addressCountry": "BD"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://alisatechstudio.online/contact.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I contact Alisa Tech Studio customer support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach Alisa Tech Studio by emailing alisatechstudio@gmail.com. We respond to all technical support, bug reports, and business partnership inquiries within 24–48 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Alisa Tech Studio accept custom mobile app development projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Alisa Tech Studio partners with select startups, creators, and businesses to engineer custom Flutter applications for iOS, Android, and web with native performance standards."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
   :root {
     --ink: #1a1d23;

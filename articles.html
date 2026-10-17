@@ -93,6 +93,90 @@
   })(window, document, "clarity", "script", "yv2r38db10");
 </script>
 
+<!-- Schema.org Rich Structured Data (CollectionPage, ItemList, BreadcrumbList, FAQPage for PAA & AI Search) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://alisatechstudio.online/articles.html#collection",
+      "url": "https://alisatechstudio.online/articles.html",
+      "name": "Knowledge Hub & Engineering Guides | Alisa Tech Studio",
+      "description": "Technical publications, Flutter mobile engineering guides, cognitive puzzle solving strategies, and language acquisition frameworks from Alisa Tech Studio.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://alisatechstudio.online/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Articles & Knowledge Hub",
+            "item": "https://alisatechstudio.online/articles.html"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Mastering Flutter Performance: The 120 FPS Engineering Guide",
+            "url": "https://alisatechstudio.online/articles/flutter-mobile-app-performance.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Complete Sudoku Strategy Guide: From Beginner to Master",
+            "url": "https://alisatechstudio.online/articles/sudoku-mastery-guide.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The Accelerated Dual-Language Acquisition Framework",
+            "url": "https://alisatechstudio.online/articles/effective-language-learning.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Mobile App Security, Privacy & Cryptographic Integrity",
+            "url": "https://alisatechstudio.online/articles/mobile-app-security-privacy.html"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://alisatechstudio.online/articles.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Alisa Tech Studio optimize Flutter app performance to 120 FPS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We optimize Flutter rendering by minimizing widget rebuild trees with selective listeners, offloading heavy computations into background Dart Isolates, leveraging Impeller on iOS/Vulkan on Android, and tracking memory allocations with Flutter DevTools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the core cognitive techniques for solving Expert Sudoku puzzles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Expert Sudoku requires advanced candidate elimination patterns including Pointing Pairs, Box-Line Reductions, Naked Triples/Quads, X-Wing, and Swordfish to systematically narrow down cell candidates."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
   :root {
     --ink: #1a1d23;

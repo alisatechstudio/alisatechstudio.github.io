@@ -1,0 +1,72 @@
+# Alisa Tech Studio - Complete Knowledge & System Documentation (llms-full.txt)
+
+> Alisa Tech Studio is an independent mobile application and modern web software development studio specializing in high-performance Flutter mobile applications, cognitive puzzle gaming, and educational language learning software.
+
+---
+
+## 1. Company & Entity Overview
+- **Legal Entity**: Alisa Tech Studio
+- **Official Website**: https://alisatechstudio.online/
+- **Headquarters**: Naria, Shariatpur, Bangladesh
+- **Contact Email**: alisatechstudio@gmail.com
+- **Google Play Developer**: Alisa Tech Studio
+- **Core Technology Stack**: Flutter (Dart), Firebase, Cloudflare, Node.js, Web Standards (HTML5/CSS3/ESNext), REST APIs
+- **Specialization**: 120 FPS buttery rendering pipelines, isolated thread concurrency, on-device SQLite caching, zero-jank cross-platform compilation for Android and iOS.
+
+---
+
+## 2. Core Applications & Products
+
+### German-Italian Language Mastery App
+- **Target Audience**: Polyglots, travelers, language students, CEFR A1-C1 learners.
+- **Methodology**: Dual-language comparative acquisition utilizing Leitner Spaced Repetition (SRS), native pronunciation audio playback, contextual grammatical breakdowns, and offline vocabulary mastery.
+- **Platforms**: Android (Google Play) and iOS.
+
+### MindSharp Sudoku Pro
+- **Features**: Procedurally generated deterministic puzzles across 5 distinct difficulty tiers (Easy, Medium, Hard, Expert, Master).
+- **Tooling**: Built-in intelligent hint system explaining exact deduction logic (Naked Singles, Hidden Pairs, Pointing Pairs, X-Wing), pencil marking, error-highlighting, and complete offline capability.
+
+### Custom Software Engineering
+- **Services**: Turnkey mobile app architecture, Flutter migration from native codebases, API design, App Store & Google Play submission and compliance management, GDPR & ATT privacy architecture.
+
+---
+
+## 3. Engineering & Technical Publications
+
+### Flutter Mobile App Performance Optimization (120 FPS Blueprint)
+- **Key Takeaways**:
+  1. Constraining widget rebuilding through granular `ValueListenableBuilder`, `BlocSelector`, or `Riverpod` selective listeners.
+  2. Offloading CPU-heavy computational tasks (JSON serialization, matrix calculations) into background Dart `Isolates`.
+  3. Eliminating shader compilation stutter using Impeller graphics runtime on iOS and Vulkan on Android.
+  4. Memory leak profiling via Flutter DevTools Allocation Tracker to avoid retained closures in widget trees.
+
+### Advanced Sudoku Cognitive Strategies
+- **Techniques Explained**:
+  1. **Naked Singles & Hidden Singles**: Basic elimination in rows, columns, and 3x3 blocks.
+  2. **Locked Candidates (Pointing & Claiming)**: Restricting candidate positions to eliminate possibilities in intersecting units.
+  3. **X-Wing & Swordfish Patterns**: Advanced 2-row / 3-row grid candidate parity deductions.
+
+### Accelerated Dual-Language Acquisition Framework
+- **Key Principles**:
+  1. Comprehensible Input hypothesis (Stephen Krashen) adapted for bilingual comparison.
+  2. Spaced Repetition intervals optimized for long-term retention.
+  3. Active recall testing with phonetic feedback.
+
+### Mobile App Privacy & Cryptographic Security
+- **Best Practices**:
+  1. Android Privacy Sandbox & iOS App Tracking Transparency (ATT) integration.
+  2. On-device encrypted KeyStore / Keychain credentials.
+  3. Google Consent Mode v2 implementation with granular consent categories.
+
+---
+
+## 4. Frequently Asked Questions (FAQ)
+
+### What does Alisa Tech Studio do?
+Alisa Tech Studio develops native-grade mobile applications using Flutter and Dart, focused on cognitive training tools, educational applications, and privacy-first digital experiences.
+
+### Are Alisa Tech Studio applications available offline?
+Yes, all core applications—including MindSharp Sudoku and language learning flashcards—are built with local SQLite persistence and function 100% offline without requiring continuous internet access.
+
+### How can I contact Alisa Tech Studio for business or support?
+You can reach our engineering and support team directly via email at alisatechstudio@gmail.com or via the contact form on https://alisatechstudio.online/contact.html.
