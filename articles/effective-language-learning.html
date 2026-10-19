@@ -275,13 +275,52 @@
     color: #f1f5f9;
   }
 </style>
+  <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
+  <!-- Skip Link for Keyboard Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="top-accent-bar" aria-hidden="true"></div>
+
+  <!-- Main Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container-wrapper">
+      <a href="../index.html" class="site-logo" aria-label="Alisa Tech Studio Homepage">
+        <img src="../assets/icons/site-icon.png" alt="Alisa Tech Studio Logo" width="38" height="38">
+        <span>Alisa Tech Studio</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="hamburger-icon" aria-hidden="true">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </span>
+      </button>
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html" class="nav-item" data-nav="home">Home</a></li>
+          <li><a href="../services.html" class="nav-item" data-nav="services">Services</a></li>
+          <li><a href="../portfolio.html" class="nav-item" data-nav="portfolio">Portfolio</a></li>
+          <li><a href="../about.html" class="nav-item" data-nav="about">About</a></li>
+          <li><a href="../articles.html" class="nav-item active" data-nav="articles">Articles</a></li>
+          <li><a href="../faq.html" class="nav-item" data-nav="faq">FAQ</a></li>
+          <li><a href="../contact.html" class="nav-item nav-btn" data-nav="contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
 <div class="wrap">
-  <div class="back-nav">
-    <a href="../articles.html">&larr; Back to Articles</a>
-    <a href="/">Home</a>
+    <div class="back-nav">
+    <a href="../index.html">&larr; Home</a>
+    <a href="../services.html">Services</a>
+    <a href="../portfolio.html">Portfolio</a>
     <a href="../about.html">About Us</a>
+    <a href="../articles.html">All Articles</a>
+    <a href="../faq.html">FAQ</a>
+    <a href="../contact.html">Contact Us</a>
+    <a href="../privacy_policy.html">Privacy Policy</a>
   </div>
 
   <header class="hero">
@@ -434,5 +473,6 @@
     }
   })();
 </script>
+  <script src="../js/site-header.js"></script>
 </body>
 </html>

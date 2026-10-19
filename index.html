@@ -128,6 +128,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=optional">
+    <link rel="stylesheet" href="css/common.css">
 
     <!-- Google AdSense (Lazy-loaded on user interaction for peak performance & 100 Best Practices) -->
     <script>
@@ -1665,9 +1666,9 @@
 
     <!-- Header & Navigation -->
     <header class="site-header" id="siteHeader">
-        <div class="container nav-wrapper">
-            <a href="#home" class="logo" aria-label="Alisa Tech Studio Homepage">
-                <img src="assets/icons/site-icon.png" alt="Alisa Tech Studio Logo" width="38" height="38" style="border-radius: 9px; object-fit: contain; box-shadow: 0 4px 10px rgba(6, 182, 212, 0.25);">
+        <div class="nav-container-wrapper">
+            <a href="index.html" class="site-logo" aria-label="Alisa Tech Studio Homepage">
+                <img src="assets/icons/site-icon.png" alt="Alisa Tech Studio Logo" width="38" height="38">
                 <span>Alisa Tech Studio</span>
             </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mainNav">
@@ -1677,15 +1678,15 @@
                     <span class="hamburger-bar"></span>
                 </span>
             </button>
-            <nav class="nav-container" id="mainNav" aria-label="Primary Navigation">
+            <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#home" class="nav-item active">Home</a></li>
-                    <li><a href="#services" class="nav-item">Services</a></li>
-                    <li><a href="#apps" class="nav-item">Portfolio</a></li>
-                    <li><a href="#about" class="nav-item">About</a></li>
-                    <li><a href="#articles" class="nav-item">Articles</a></li>
-                    <li><a href="#faq" class="nav-item">FAQ</a></li>
-                    <li><a href="#contact" class="nav-item nav-btn">Contact Us</a></li>
+                    <li><a href="index.html" class="nav-item active" data-nav="home">Home</a></li>
+                    <li><a href="services.html" class="nav-item" data-nav="services">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-item" data-nav="portfolio">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-item" data-nav="about">About</a></li>
+                    <li><a href="articles.html" class="nav-item" data-nav="articles">Articles</a></li>
+                    <li><a href="faq.html" class="nav-item" data-nav="faq">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-item nav-btn" data-nav="contact">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -1821,6 +1822,10 @@
                         <li>Proactive performance optimizations</li>
                     </ul>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="services.html" class="btn-primary" style="padding: 0.85rem 2rem; border-radius: var(--radius-full); font-weight: 600; display: inline-flex;">View Full Engineering Services &rarr;</a>
             </div>
         </div>
     </section>
@@ -2443,6 +2448,10 @@
                     </div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="portfolio.html" class="btn-primary" style="padding: 0.85rem 2rem; border-radius: var(--radius-full); font-weight: 600; display: inline-flex;">Explore All 28+ Apps in Portfolio &rarr;</a>
+            </div>
         </div>
     </section>
 
@@ -2609,6 +2618,10 @@
                     </div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="faq.html" class="btn-secondary" style="padding: 0.85rem 2rem; border-radius: var(--radius-full); font-weight: 600; display: inline-flex;">Browse Complete FAQ &amp; Support &rarr;</a>
+            </div>
         </div>
     </section>
 
@@ -2761,13 +2774,13 @@
                 <div>
                     <h4 class="footer-title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="about.html">About Studio</a></li>
                         <li><a href="articles.html">Articles &amp; Guides</a></li>
-                        <li><a href="#apps">Published Apps</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="contact.html">Contact Support</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -2802,86 +2815,11 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- Common Header & Multi-Page Navigation Component -->
+    <script src="js/site-header.js"></script>
+
+    <!-- Interactive Page Scripts -->
     <script>
-        // Mobile Navigation Toggle with Accessibility & Outside-Click Handling
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const navLinks = document.getElementById('navLinks');
-
-        function setNavOpen(isOpen) {
-            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            if (isOpen) {
-                mainNav.classList.add('active');
-            } else {
-                mainNav.classList.remove('active');
-            }
-        }
-
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-            setNavOpen(!isOpen);
-        });
-
-        // Close mobile nav when clicking any link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                setNavOpen(false);
-            });
-        });
-
-        // Close mobile nav when clicking outside the header
-        document.addEventListener('click', (e) => {
-            const header = document.getElementById('siteHeader');
-            if (header && !header.contains(e.target)) {
-                setNavOpen(false);
-            }
-        });
-
-        // Close mobile nav on Escape key press
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
-                setNavOpen(false);
-                menuToggle.focus();
-            }
-        });
-
-        // ScrollSpy: highlight active nav item based on current viewport scroll position
-        const spySections = document.querySelectorAll('section[id]');
-        const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
-
-        function updateActiveNav() {
-            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            const headerOffset = 100;
-
-            let currentId = '';
-            spySections.forEach(sec => {
-                const secTop = sec.offsetTop - headerOffset;
-                const secHeight = sec.offsetHeight;
-                if (scrollY >= secTop && scrollY < secTop + secHeight) {
-                    currentId = sec.getAttribute('id');
-                }
-            });
-
-            if (!currentId && scrollY < 250) {
-                currentId = 'home';
-            }
-
-            if (currentId) {
-                navItems.forEach(item => {
-                    if (item.getAttribute('href') === `#${currentId}`) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-            }
-        }
-
-        window.addEventListener('scroll', updateActiveNav, { passive: true });
-        window.addEventListener('load', updateActiveNav);
-
         // FAQ Accordion
         document.querySelectorAll('.faq-item').forEach(item => {
             const question = item.querySelector('.faq-question');

@@ -7,9 +7,12 @@ Alisa Tech Studio specializes in cross-platform mobile engineering, cognitive pu
 ## Core Pages
 
 - [Home](https://alisatechstudio.online/): Main portal showcasing our software portfolio, development capabilities, Flutter expertise, and company overview.
+- [Services](https://alisatechstudio.online/services.html): Full-cycle software engineering services including cross-platform mobile apps, modern web platforms, cloud architectures, and maintenance.
+- [Portfolio](https://alisatechstudio.online/portfolio.html): Complete showcase of 28+ published mobile applications and modern web portals with real-time filtering and live demos.
 - [About Us](https://alisatechstudio.online/about.html): Our engineering philosophy, software architecture standards, and development team background.
-- [Contact](https://alisatechstudio.online/contact.html): Inquiries, custom software partnerships, support desk, and user feedback channels (alisatechstudio@gmail.com).
 - [Knowledge Hub & Articles](https://alisatechstudio.online/articles.html): In-depth engineering tutorials, technical guides, puzzle strategies, and language learning research.
+- [FAQ & Support](https://alisatechstudio.online/faq.html): Frequently asked questions regarding development timelines, Flutter frame rates, privacy compliance, and developer support.
+- [Contact](https://alisatechstudio.online/contact.html): Inquiries, custom software partnerships, support desk, and user feedback channels (alisatechstudio@gmail.com).
 
 ## Engineering & Knowledge Guides
 

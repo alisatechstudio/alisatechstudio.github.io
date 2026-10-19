@@ -12,6 +12,16 @@
 - **Google Play Developer**: Alisa Tech Studio
 - **Core Technology Stack**: Flutter (Dart), Firebase, Cloudflare, Node.js, Web Standards (HTML5/CSS3/ESNext), REST APIs
 - **Specialization**: 120 FPS buttery rendering pipelines, isolated thread concurrency, on-device SQLite caching, zero-jank cross-platform compilation for Android and iOS.
+- **Core Site Architecture**:
+  - Home: `https://alisatechstudio.online/`
+  - Services: `https://alisatechstudio.online/services.html`
+  - Portfolio: `https://alisatechstudio.online/portfolio.html`
+  - About Us: `https://alisatechstudio.online/about.html`
+  - Articles: `https://alisatechstudio.online/articles.html`
+  - FAQ & Support: `https://alisatechstudio.online/faq.html`
+  - Contact Us: `https://alisatechstudio.online/contact.html`
+  - Privacy Policy: `https://alisatechstudio.online/privacy_policy.html`
+  - Terms of Service: `https://alisatechstudio.online/terms.html`
 
 ---
 
