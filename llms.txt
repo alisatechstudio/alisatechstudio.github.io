@@ -2,7 +2,7 @@
 
 > Alisa Tech Studio builds innovative, high-performance Flutter mobile applications, modern web software, and custom digital experiences for iOS, Android, and the web.
 
-Alisa Tech Studio specializes in cross-platform mobile engineering, cognitive puzzle games, educational language learning tools, and privacy-first digital applications. We craft intuitive user interfaces, architect buttery 120 FPS rendering pipelines, and partner with startups and organizations to build custom software.
+Alisa Tech Studio specializes in cross-platform mobile engineering, cognitive puzzle games, educational language learning tools, community reporting platforms, and privacy-first digital applications. We craft intuitive user interfaces, architect buttery 120 FPS rendering pipelines, and partner with startups and organizations to build custom software.
 
 ## Core Pages
 

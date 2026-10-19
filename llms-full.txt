@@ -26,6 +26,13 @@
 - **Features**: Procedurally generated deterministic puzzles across 5 distinct difficulty tiers (Easy, Medium, Hard, Expert, Master).
 - **Tooling**: Built-in intelligent hint system explaining exact deduction logic (Naked Singles, Hidden Pairs, Pointing Pairs, X-Wing), pencil marking, error-highlighting, and complete offline capability.
 
+### BMCAG Report
+- **Package ID**: `org.bmcag.reports`
+- **Category**: Productivity & Community Reporting
+- **Target Audience**: Members and organizers of the Bangladeshi Muslim Community Association Germany (BMCAG).
+- **Core Functionality**: Personal development monitoring, daily and monthly activity logging, structured progress tracking, and organization communication.
+- **Platforms**: Android (Google Play Store).
+
 ### Custom Software Engineering
 - **Services**: Turnkey mobile app architecture, Flutter migration from native codebases, API design, App Store & Google Play submission and compliance management, GDPR & ATT privacy architecture.
 
