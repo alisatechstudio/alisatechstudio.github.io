@@ -950,6 +950,44 @@
             border: 1px solid #fde68a;
         }
 
+        .app-card[data-category="web"] .app-category {
+            background: #ede9fe;
+            color: #6d28d9;
+            border: 1px solid #ddd6fe;
+        }
+
+        .web-visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 1.1rem;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: #ffffff !important;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            box-shadow: 0 3px 8px rgba(79, 70, 229, 0.25);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .web-visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.38);
+            background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+            color: #ffffff !important;
+        }
+
+        .web-visit-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.2s ease;
+        }
+
+        .web-visit-btn:hover svg {
+            transform: translateX(3px);
+        }
+
         .app-card p {
             font-size: 0.92rem;
             color: var(--body-text);
@@ -1595,7 +1633,7 @@
                 <div class="hero-stats-ribbon">
                     <div class="hero-stat-pill">
                         <span>📱</span>
-                        <span><strong>16+</strong> Production Apps</span>
+                        <span><strong>28+</strong> Apps &amp; Web Platforms</span>
                     </div>
                     <div class="hero-stat-pill">
                         <span>⚡</span>
@@ -1713,11 +1751,12 @@
 
             <!-- Filter Controls -->
             <div class="filter-tabs">
-                <button class="filter-btn active" data-filter="all">All Applications</button>
+                <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="tools">Tools &amp; Utilities</button>
                 <button class="filter-btn" data-filter="games">Games &amp; Puzzles</button>
                 <button class="filter-btn" data-filter="education">Education &amp; Language</button>
                 <button class="filter-btn" data-filter="productivity">Productivity &amp; News</button>
+                <button class="filter-btn" data-filter="web">Websites &amp; Platforms</button>
             </div>
 
             <div class="apps-grid">
@@ -2055,6 +2094,266 @@
                             rel="noopener noreferrer" class="play-badge-link" aria-label="Download BMCAG Report on Google Play"><img
                                 src="assets/icons/google-play-badge.png" alt="Download BMCAG Report on Google Play"
                                 class="play-badge" width="462" height="132" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <!-- App 17: Bangladesh Constitution -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/bangladesh-constitution.png" alt="Bangladesh Constitution Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Bangladesh Constitution</h3>
+                            <span class="app-category">Law &amp; Education</span>
+                        </div>
+                    </div>
+                    <p>Complete Constitution of the People's Republic of Bangladesh with bilingual Bengali &amp; English text, constitutional amendments, and quick search.</p>
+                    <div class="app-footer">
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.bangladesh_constitution" target="_blank"
+                            rel="noopener noreferrer" class="play-badge-link" aria-label="Download Bangladesh Constitution on Google Play"><img
+                                src="assets/icons/google-play-badge.png" alt="Download Bangladesh Constitution on Google Play"
+                                class="play-badge" width="462" height="132" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <!-- App 18: Learn German (A2 Level) -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/learn-german-a2.png" alt="Learn German A2 Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Learn German (A2 Level)</h3>
+                            <span class="app-category">Language Course</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive intermediate German course targeting the CEFR A2 curriculum with structured grammar, practical audio, and spaced repetition drills.</p>
+                    <div class="app-footer">
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.german_a2" target="_blank"
+                            rel="noopener noreferrer" class="play-badge-link" aria-label="Download Learn German A2 on Google Play"><img
+                                src="assets/icons/google-play-badge.png" alt="Download Learn German A2 on Google Play"
+                                class="play-badge" width="462" height="132" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <!-- App 19: Learn Italian (A2 Level) -->
+                <div class="app-card" data-category="education">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/learn-italian-a2.png" alt="Learn Italian A2 Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Learn Italian (A2 Level)</h3>
+                            <span class="app-category">Language Course</span>
+                        </div>
+                    </div>
+                    <p>Pre-intermediate Italian language course expanding vocabulary, past tenses, situational conversations, and authentic audio pronunciation exercises.</p>
+                    <div class="app-footer">
+                        <a href="https://play.google.com/store/apps/details?id=com.alisatechstudio.italian_a2" target="_blank"
+                            rel="noopener noreferrer" class="play-badge-link" aria-label="Download Learn Italian A2 on Google Play"><img
+                                src="assets/icons/google-play-badge.png" alt="Download Learn Italian A2 on Google Play"
+                                class="play-badge" width="462" height="132" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <!-- Web Project 1: Alisa Movies -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/alisa-movies.png" alt="Alisa Movies Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Alisa Movies</h3>
+                            <span class="app-category">Streaming Media</span>
+                        </div>
+                    </div>
+                    <p>4K Ultra-HD streaming entertainment web portal featuring curated movies, TV series, instant bufferless video streaming, and responsive player.</p>
+                    <div class="app-footer">
+                        <a href="https://alisastream.site" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit Alisa Movies">
+                            <span>Visit Platform</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 2: Exam Results BD -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/examresults-bd.png" alt="Exam Results BD Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Exam Results BD</h3>
+                            <span class="app-category">Education Portal</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive Bangladesh public exam results portal delivering instantaneous SSC, HSC, Dakhil, and National University results with marksheets.</p>
+                    <div class="app-footer">
+                        <a href="https://examresultsbd.online" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit Exam Results BD">
+                            <span>Visit Portal</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 3: Live Sports TV Portal -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/livesportstv-web.png" alt="Live Sports TV Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Live Sports TV Portal</h3>
+                            <span class="app-category">Live Sports Hub</span>
+                        </div>
+                    </div>
+                    <p>Global sports broadcasting directory and streaming fixture tracker covering live football leagues, cricket series, and international tournaments.</p>
+                    <div class="app-footer">
+                        <a href="https://livesportstv.store" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit Live Sports TV">
+                            <span>Visit Portal</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 4: World Stock News -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/world-stock-news.png" alt="World Stock News Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>World Stock News</h3>
+                            <span class="app-category">Financial Intelligence</span>
+                        </div>
+                    </div>
+                    <p>Real-time financial intelligence web platform delivering live equity market tickers, macroeconomic updates, corporate filings, and economic events.</p>
+                    <div class="app-footer">
+                        <a href="https://worldstocknews.online" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit World Stock News">
+                            <span>Visit Platform</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 5: Trending News World -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/trending-news-world.png" alt="Trending News World Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Trending News World</h3>
+                            <span class="app-category">News Directory</span>
+                        </div>
+                    </div>
+                    <p>International digital news aggregator indexing leading global press outlets with real-time headline curation and multi-region filtering.</p>
+                    <div class="app-footer">
+                        <a href="#apps" class="web-visit-btn" aria-label="Explore Trending News World">
+                            <span>Explore Platform</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 6: All Calculation Hub -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/all-calculation.png" alt="All Calculation Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>All Calculation Hub</h3>
+                            <span class="app-category">Computation Suite</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive online computational suite featuring over 50 financial, mathematical, engineering, currency, and unit conversion calculators.</p>
+                    <div class="app-footer">
+                        <a href="#apps" class="web-visit-btn" aria-label="Explore All Calculation">
+                            <span>Explore Tools</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 7: Alisa Fashion Shop -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/alisa-fashion-shop.png" alt="Alisa Fashion Shop Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Alisa Fashion Shop</h3>
+                            <span class="app-category">E-Commerce</span>
+                        </div>
+                    </div>
+                    <p>Boutique fashion apparel and accessory e-commerce platform offering sleek catalog navigation, real-time inventory, and secure shopping checkout.</p>
+                    <div class="app-footer">
+                        <a href="https://alisa-fashion.shop" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit Alisa Fashion Shop">
+                            <span>Visit Store</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 8: Alisa CRM Suite -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/crm-suite.png" alt="Alisa CRM Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>Alisa CRM Suite</h3>
+                            <span class="app-category">Enterprise Cloud</span>
+                        </div>
+                    </div>
+                    <p>Full-stack modern customer relationship management platform engineered with React, Node.js, and MongoDB for business pipeline automation and sales analytics.</p>
+                    <div class="app-footer">
+                        <a href="#apps" class="web-visit-btn" aria-label="Explore Alisa CRM">
+                            <span>Enterprise Suite</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 9: BD News Portal -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/bd-news-site.png" alt="BD News Portal Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>BD News Portal</h3>
+                            <span class="app-category">News Publishing</span>
+                        </div>
+                    </div>
+                    <p>Full-featured bilingual news publishing web platform with district-level journalism, breaking alerts, prayer times, and live RSS syndication.</p>
+                    <div class="app-footer">
+                        <a href="#apps" class="web-visit-btn" aria-label="Explore BD News Portal">
+                            <span>Explore Portal</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Web Project 10: BMCAG Community Portal -->
+                <div class="app-card" data-category="web">
+                    <div class="app-top">
+                        <div class="app-icon">
+                            <img src="assets/icons/bmcag-report.png" alt="BMCAG Community Portal Icon" width="58" height="58" loading="lazy">
+                        </div>
+                        <div class="app-meta">
+                            <h3>BMCAG Community Portal</h3>
+                            <span class="app-category">Community Platform</span>
+                        </div>
+                    </div>
+                    <p>Official community portal for the Bangladeshi Muslim Community Association Germany featuring community events, member services, and social resources.</p>
+                    <div class="app-footer">
+                        <a href="https://bmcag.org" target="_blank" rel="noopener noreferrer" class="web-visit-btn" aria-label="Visit BMCAG Portal">
+                            <span>Visit Portal</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>

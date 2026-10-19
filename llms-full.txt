@@ -17,14 +17,18 @@
 
 ## 2. Core Applications & Products
 
-### German-Italian Language Mastery App
-- **Target Audience**: Polyglots, travelers, language students, CEFR A1-C1 learners.
+### German & Italian Language Mastery Series (A1 & A2)
+- **Target Audience**: Polyglots, travelers, language students, CEFR A1-A2 learners.
+- **Apps**: Learn German A1 (`com.alisatechstudio.german_a1`), Learn German A2 (`com.alisatechstudio.german_a2`), Learn Italian A1 (`com.alisatechstudio.italian_a1`), Learn Italian A2 (`com.alisatechstudio.italian_a2`).
 - **Methodology**: Dual-language comparative acquisition utilizing Leitner Spaced Repetition (SRS), native pronunciation audio playback, contextual grammatical breakdowns, and offline vocabulary mastery.
 - **Platforms**: Android (Google Play) and iOS.
 
-### MindSharp Sudoku Pro
-- **Features**: Procedurally generated deterministic puzzles across 5 distinct difficulty tiers (Easy, Medium, Hard, Expert, Master).
-- **Tooling**: Built-in intelligent hint system explaining exact deduction logic (Naked Singles, Hidden Pairs, Pointing Pairs, X-Wing), pencil marking, error-highlighting, and complete offline capability.
+### MindSharp Sudoku Pro & Puzzle Collection
+- **Apps**: Sudoku Classic (`com.alisatechstudio.sudoku`), Math Puzzles (`com.alisatechstudio.math_puzzle`), Color Sort (`com.alisatechstudio.color_sort`), Arrow Escape (`com.alisatechstudio.arrow_escape`), Fruit Crush Saga (`com.alisatechstudio.fruit_crush_saga`), Lodu Boss (`com.alisatecstudio.lodu_boss`).
+- **Features**: Procedurally generated deterministic puzzles across 5 distinct difficulty tiers, smart deduction hints, and offline capabilities.
+
+### Utility & Productivity Apps
+- **Apps**: Alisa VPN (`com.alisatechstudio.alisa_vpn`), News All in One (`com.alisatechstudio.news_all_in_one`), Personal Finance Tracker (`com.alisatechstudio.personal_finance_tracker`), QR & Barcode Scanner (`com.alisatechstudio.qr_scanner`), To Buy Shopping List (`com.alisatechstudio.to_buy`), Talk Messenger (`com.alisatechstudio.talk`), Bangladesh Constitution (`com.alisatechstudio.bangladesh_constitution`).
 
 ### BMCAG Report
 - **Package ID**: `org.bmcag.reports`
@@ -32,6 +36,17 @@
 - **Target Audience**: Members and organizers of the Bangladeshi Muslim Community Association Germany (BMCAG).
 - **Core Functionality**: Personal development monitoring, daily and monthly activity logging, structured progress tracking, and organization communication.
 - **Platforms**: Android (Google Play Store).
+
+### Web Applications & Digital Platforms
+- **Alisa Movies** (`https://alisastream.site`): 4K Ultra-HD bufferless streaming media portal.
+- **Exam Results BD** (`https://examresultsbd.online`): National Bangladesh examination marksheet and result portal.
+- **Live Sports TV Portal** (`https://livesportstv.store`): Real-time sports fixture and live event broadcast directory.
+- **World Stock News** (`https://worldstocknews.online`): Real-time equity market data, economic calendars, and financial news intelligence.
+- **Alisa Fashion Store** (`https://alisa-fashion.shop`): Boutique apparel e-commerce portal with mobile-first checkout.
+- **All Calculation Hub**: Multi-utility computational web tools for finance, math, and conversions.
+- **Alisa CRM Suite**: Full-stack MERN (React/Node/MongoDB) enterprise pipeline and customer relationship management platform.
+- **BD News Portal**: Bilingual district-level news publishing system with live RSS syndication.
+- **BMCAG Community Portal** (`https://bmcag.org`): Official German-Bangladeshi community non-profit portal.
 
 ### Custom Software Engineering
 - **Services**: Turnkey mobile app architecture, Flutter migration from native codebases, API design, App Store & Google Play submission and compliance management, GDPR & ATT privacy architecture.
